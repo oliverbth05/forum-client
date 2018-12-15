@@ -1,0 +1,149 @@
+.header-massive {
+    display: block;
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: white;
+    animation: header-fade;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}
+
+.text {
+    max-width: 1200px;
+    padding: 20px;
+    font-size: 18px;
+    color: white;
+    font-weight: lighter;
+    line-height: 30px;
+}
+
+.full-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary-tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    grid-gap: 10px;
+    padding-top: 70px;
+    
+    @media screen and (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr)
+    }
+    
+    @media screen and (max-width: 600px) {
+        grid-template-columns: repeat(1, 1fr)
+    }
+    
+    
+    &__el {
+        font-size: 18px;
+        padding: 20px;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.6);
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: lighter;
+        letter-spacing: 2px;
+        transition: background .5s;
+        &:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        i {
+            padding: 70px;
+            display: block;
+            font-size: 80px;
+            text-align: center;
+        }
+    }
+}
+
+.secondary-tools {
+    width: 100%;
+
+    margin-top: 10px;
+    border-radius: 2px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    
+    @media screen and (max-width: 605px) {
+            grid-template-columns: repeat(2, 1fr)
+    }
+    
+    div {
+        background: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        padding: 30px;
+        text-align: center;
+        border-radius: 2px;
+        font-weight: lighter;
+        letter-spacing: 2px;
+        transition: background .5s;
+        font-size: 15px;
+        &:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        
+        
+    }
+}
+
+.fade-interval-1 {
+    animation: header-fade;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-2 {
+    animation: header-fade;
+    animation-duration: .6s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-3 {
+    animation: header-fade;
+    animation-duration: .7s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-4 {
+    animation: header-fade;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+}
+
+@keyframes header-fade {
+    from {
+        transform: scale(.4);
+        opacity: 0;
+    }
+    
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.bg-1 {
+    background: $color2;
+}
+
+.bg-2 {
+    background: linear-gradient($color2, $color4);
+}
+
+.bg-3 {
+    background: linear-gradient($color4, $color5);
+}

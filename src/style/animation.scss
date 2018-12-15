@@ -1,0 +1,39 @@
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active, .slide-leave-active {
+    transition: all .1s;
+}
+
+.slide-enter, .slide-leave-to {
+    transform: translateX(-100%);
+}
+
+
+.Fade-enter-active, .Fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .25s;
+}
+
+.Fade-enter-active {
+  transition-delay: .25s;
+}
+
+.Fade-enter, .Fade-leave-active {
+  opacity: 0
+}

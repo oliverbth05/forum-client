@@ -1,0 +1,33 @@
+@import './animation.scss';
+@import './variables.scss';
+@import './layout.scss';
+@import './typography.scss';
+
+@import './components/nav.scss';
+@import './components/form.scss';
+@import './components/loader.scss';
+@import './components/card.scss';
+@import './components/comment.scss';
+
+@import './pages/auth.scss';
+@import './pages/show.scss';
+@import './pages/user.scss';
+@import './pages/home.scss';
+@import './pages/about.scss';
+
+* { 
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+.height-100 {
+    min-height: 100vh;
+}
+

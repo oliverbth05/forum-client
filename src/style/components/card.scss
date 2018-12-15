@@ -1,0 +1,77 @@
+.card {
+    transition: all .2s;
+    display: flex;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    
+    &:hover {
+        background: white;
+    }
+    
+    &__title {
+        display: block;
+        color: $color1;
+        font-size: 25px;
+        font-weight: bold;
+        @media screen and (max-width: 900px) {
+            font-size: 18px;
+        }
+        
+    }
+    
+    &__date {
+        display: block;
+        margin-bottom: 0;
+        font-size: 15px;
+        padding-top: 5px;
+        font-weight: lighter;
+    }
+    
+    &__author {
+        padding-top: 5px;
+        margin-bottom: 0;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: lighter;
+      
+    }
+    
+    &__info {
+        padding: 10px;
+    }
+    
+    &__vote {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 100px;
+        
+        
+        i {
+            display: inline-block;
+            font-size: 20px;
+            color: $color1;
+            @media screen and (max-width: 900px) {
+                font-size: 16px;
+            }
+            
+        }
+        
+        p {
+            color: $color1;
+            display: inline-block;
+            font-size: 20px;
+            margin: 0;
+            @media screen and (max-width: 900px) {
+                font-size: 16px;
+            }
+        }
+    }
+}

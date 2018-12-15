@@ -1,0 +1,48 @@
+.sort-buttons {
+    display: flex;
+}
+
+.sort-button-inactive {
+    color: black;
+    background: rgba(255, 255, 255, 0.6);
+    margin: 5px;
+    padding: 15px 5px 15px 5px;
+    width: 100%;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: all .2s;
+    
+    &:focus {
+        outline: none;
+    }
+    
+    &:hover {
+        background: white;
+    }
+}
+
+.sort-button-active {
+    @include box;
+    margin: 5px;
+    padding: 15px 5px 15px 5px;
+    width: 100%;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: black;
+    background: white;
+    
+    &:focus {
+        outline: none;
+        
+    }
+    
+    
+}
+
+.end-of-list {
+    font-size: 18px;
+    color: white;
+    border-bottom: 1px solid white;
+    padding: 15px;
+    text-align: center;
+}

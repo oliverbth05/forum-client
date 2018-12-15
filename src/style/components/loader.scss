@@ -1,0 +1,16 @@
+.loader {
+    display: block;
+    position: fixed;
+    top: 40%;
+    right: 40%;
+    
+    border-bottom: 3px solid $color1;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    animation: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}

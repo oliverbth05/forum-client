@@ -1,0 +1,35 @@
+@mixin specialFont($size, $color) {
+    font-size: $size;
+    color: $color;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+@mixin hoverColor($color){
+    &:hover {
+        color: $color;
+        transition: all .2s;
+    }
+}
+
+.center {
+    text-align: center;
+}
+ 
+h1 {
+    font-size: 32px;
+    font-weight: normal;
+    padding: 10px 0px 10px 0px;
+    color: $color1;
+    font-weight: 300;
+}
+
+h2 {
+    font-weight: normal;
+    padding: 20px 0px 20px 0px;
+}
+
+.body-text {
+    
+}

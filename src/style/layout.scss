@@ -1,0 +1,28 @@
+.container-content-centered {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-container {
+    display: flex;
+    height: 40vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-600 {
+    width: 600px;
+}
+
+.container-900 {
+    width: 900px;
+    margin: auto;
+}
+
+.container-1200 {
+    padding: 55px 8px 8px 8px;
+    max-width: 1200px;
+    margin: auto;
+}

@@ -1,0 +1,55 @@
+.auth {
+    &__link {
+        text-align: center;
+        margin: auto;
+        margin-top: 50px;
+        color: $color2;
+        font-size: 18px;
+        padding: 10px 0px 0px 0px ;
+        text-align: center;
+        cursor: pointer;
+        
+        &:hover {
+            text-decoration: underline; 
+        }
+    }
+    
+    &__error {
+        
+        max-width: 100%;
+        margin: 10px;
+        background: $color4;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 10px;
+        div {
+            font-size: 18px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        i {
+            color: white;
+           font-size: 22px;
+           padding-right: 20px;
+        }
+    }
+}
+
+.form {
+    border-radius: 2px;
+    background: white;
+    padding: 20px;
+    margin:10px;
+}
+
+.form-container {
+    width: 600px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}

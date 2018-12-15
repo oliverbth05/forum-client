@@ -1,0 +1,13 @@
+.user {
+   
+   margin-top: 50px;
+   padding: 10px;
+   
+    &__avatar {
+        display: block;
+        border-radius: 50%;
+        height: 150px;
+        width: 150px;
+        margin: auto;
+    }
+}
