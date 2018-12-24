@@ -3,16 +3,16 @@
         border-radius: 2px;
         display: flex;
         color: $color3;
-        padding: 10px;
+        padding: 20px;
         align-items: center;
         justify-content: space-between;
         background: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(230, 230, 230, 1);
     }
     
      &__author-info {
         display: flex;
         align-items: center;
-        padding: 10px;
         img {
             height: 60px;
             width: 60px; 
@@ -117,3 +117,6 @@
     padding-left: 5px;
 }
 
+.headline {
+    padding-left: 20px;
+}

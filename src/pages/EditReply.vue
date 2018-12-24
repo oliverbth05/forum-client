@@ -4,13 +4,13 @@
         <v-progress-circular
             :size="70"
             :width="5"
-            color="rgb(239, 134, 35)"
+            color="rgb(255, 255, 255)"
             indeterminate
         ></v-progress-circular>
     </div>
     
     <div class = 'container-1200' v-else>
-        <form @submit.prevent = 'updateEditReply({comment_id: edit_reply._id, reply_id: edit_reply.replies[0]._id, body: body, token: token})' class = 'form'>
+        <form @submit.prevent = 'submitEdit' class = 'form'>
             <h1 class = 'display-1 center'>Edit Reply</h1>
             <label class = 'label'>Reply</label>
             <textarea class = 'textarea-small' v-model = 'body'></textarea>
@@ -32,7 +32,7 @@
                 body: '',
                 hasLoaded: false
             }
-        },
+        }, 
         
         computed: {
            ...mapGetters(['edit_reply_loading', 'edit_reply', 'token'])
@@ -45,6 +45,16 @@
                 e.preventDefault();
                 this.$router.go(-1);
             },  
+            submitEdit(){
+                if(this.body) {
+                    this.updateEditReply({comment_id: this.edit_reply._id, reply_id: this.edit_reply.replies[0]._id, body: this.body, token: this.token})
+                }
+                
+                else {
+                    alert('Cannot submit empty reply, you can delete it altogether if you wish.')
+                }
+                
+            }
         },
         
         updated() {

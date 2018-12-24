@@ -2,8 +2,8 @@
     <div v-if = 'create_loading' class = 'container-content-centered'>
         <v-progress-circular
         :size="70"
-        :width="4"
-        color="rgb(239, 134, 35)"
+        :width="5"
+        color="rgb(255, 255, 255)"
         indeterminate
         ></v-progress-circular>
     </div> 

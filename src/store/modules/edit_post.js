@@ -5,7 +5,7 @@ const state = {
    edit_post: null,
    edit_loading: false
 }
-
+ 
 const getters = {
     edit_post: (state) => {
         return state.edit_post
@@ -32,7 +32,7 @@ const actions = {
     
     fetchEditPost(context, post_id) {
         context.commit('init_edit_loading');
-        axios.get('https://frontend-templates-oliverbth05.c9users.io:8081/posts/' + post_id)
+        axios.get('https://ob-forum-api.herokuapp.com/posts/' + post_id)
         .then(response => {
             console.log(response.data)
             context.commit('load_edit_post', response.data)
@@ -45,7 +45,7 @@ const actions = {
     },
     updateEditPost(context, data) {
         context.commit('init_edit_loading')
-        axios.put('https://frontend-templates-oliverbth05.c9users.io:8081/posts/' + data.post_id, data)
+        axios.put('https://ob-forum-api.herokuapp.com/posts/' + data.post_id, data)
         .then(response => {
             router.history.push('/show/' + data.post_id)
             context.commit('finish_edit_loading')
@@ -62,7 +62,7 @@ const actions = {
     },
     deletePost(context, data) {
         context.commit('loading')
-        axios.delete('https://frontend-templates-oliverbth05.c9users.io:8081/posts/' + data.post_id)
+        axios.delete('https://ob-forum-api.herokuapp.com/posts/' + data.post_id)
         .then(response => {
             context.commit('deletePostFromState', data.post_id)
             router.history.push('/home');

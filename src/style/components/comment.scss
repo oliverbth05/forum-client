@@ -1,16 +1,11 @@
 .comment {
     display: grid;
-    grid-template-columns: 1fr 10fr 2fr;
+    grid-template-columns: 2fr 25fr 4fr;
     grid-template-rows: 1fr;
     align-items: center;
     margin-bottom: 8px;
-    background: rgba(255, 255, 255, 0.7);
-    transition: all .2s;
-    border: 1px solid white;
     border-radius: 2px;
-    &:hover {
-        background: white;
-    }
+
     
     &__content {
         padding: 10px;
@@ -27,11 +22,16 @@
     }
     
     &__avatar {
-        display: block;
-        margin: auto; 
-        height: 60px;
-        width: 60px;
+        background: black;
+        color: white;
         border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        padding-top: 10px;
+        padding-left: 12px;
+        font-size: 25px;
+        align-self: center;
+        justify-self: center;
         
     }
     
@@ -110,18 +110,12 @@
 .reply {
     
     display: grid;
-    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-columns: 2fr 25fr 4fr;
     grid-template-rows: 1fr;
     margin-bottom: 8px;
     margin-left: 50px;
-    border: 1px solid white;
     border-radius: 2px;
-    background: rgba(255, 255 ,255, 0.7);
-    transition: all .2s;
-    
-    &:hover {
-        background: white;
-    }
+    background: rgb(230, 230, 230)
     
     &__avatar {
         margin: auto;
@@ -130,9 +124,6 @@
         border-radius: 50%;
         
     }
-    
-    
-
 }
 
 

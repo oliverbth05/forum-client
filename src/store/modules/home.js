@@ -94,7 +94,7 @@ const actions = {
     fetchHomePosts(context, params) {
         context.commit('changeHomeSort', params.sort)
         context.commit('init_postsLoading');
-        axios.get('https://frontend-templates-oliverbth05.c9users.io:8081/posts?sort=' + params.sort + '&page=' + params.page)
+        axios.get('https://ob-forum-api.herokuapp.com/posts?sort=' + params.sort + '&page=' + params.page)
         .then(response => {
             context.commit('resetList')
             context.commit('loadHomePosts', response.data)
@@ -109,7 +109,7 @@ const actions = {
     },
     fetchMoreHomePosts(context, params) {
         context.commit('init_morePostsLoading')
-        axios.get('https://frontend-templates-oliverbth05.c9users.io:8081/posts?sort=' + params.sort + '&page=' + params.page)
+        axios.get('https://ob-forum-api.herokuapp.com/posts?sort=' + params.sort + '&page=' + params.page)
         .then(response => {
             if (response.data.length > 0) {
                 context.commit('loadHomePosts', response.data)

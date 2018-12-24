@@ -13,7 +13,7 @@
         @submit.prevent = 'updateEditPost({
         title: post_data.title,
         body: post_data.body,
-        image: willUpdateImage,
+        image: post_data.image,
         post_id: post_data._id,
         token: token
         })' 
@@ -29,7 +29,7 @@
             <br />
             <label class = 'label'>Image URL</label>
             <br />
-            <input class= 'input' v-model = 'image' type = 'text'>
+            <input class= 'input' v-model = 'post_data.image' type = 'text'>
             <br />
             <br />
             <button class = 'button-inline btn-orange' type = 'submit' ><i class="far fa-save"></i> Update</button>
@@ -45,9 +45,8 @@
     export default {
         data() {
             return {
-                post_data: null, //WIll contain the data to be updated
-                hasLoaded: false,
-                image: null
+                post_data: null, // Contains the updated data
+                hasLoaded: false
             }
         },
         

@@ -70,6 +70,10 @@ const mutations = {
     deleteComment(state, index) {
         state.show_comments.splice(index, 1)
     },
+    deleteReply(state, indices) {
+        console.log(indices)
+        state.show_comments[indices.comment_index].replies.splice(indices.reply_index, 1)
+    }
 
     
 }
@@ -77,7 +81,7 @@ const mutations = {
 const actions = {
     fetchPost(context, id) {
         context.commit('init_post_loading')
-        axios.get('https://frontend-templates-oliverbth05.c9users.io:8081/posts/' + id)
+        axios.get('https://ob-forum-api.herokuapp.com/posts/' + id)
         .then(response => {
             context.commit('loadPost', response.data);
         })
@@ -87,7 +91,7 @@ const actions = {
     },
     fetchComments(context, post_id) {
         context.commit('init_comments_loading')
-        axios.get('https://frontend-templates-oliverbth05.c9users.io:8081/posts/' + post_id + '/comments')
+        axios.get('https://ob-forum-api.herokuapp.com/posts/' + post_id + '/comments')
         .then(response => {
             context.commit('loadComments', response.data)
             context.commit('nLoading')
@@ -98,7 +102,7 @@ const actions = {
     },
     postComment(context, data) {
         context.commit('init_comments_loading')
-        axios.post('https://frontend-templates-oliverbth05.c9users.io:8081/posts/' + data.post_id + '/comments', data)
+        axios.post('https://ob-forum-api.herokuapp.com/posts/' + data.post_id + '/comments', data)
         .then(response => {
             context.commit('postComment', response.data)
             context.commit('finish_comments_loading')
@@ -106,14 +110,32 @@ const actions = {
     },
     postReply(context, data) { //******FIX
         context.commit('init_comments_loading')
-        axios.post('https://frontend-templates-oliverbth05.c9users.io:8081/posts/' + data.post_id + '/comments/' + data.comment_id + '/replies', data)
+        axios.post('https://ob-forum-api.herokuapp.com/posts/' + data.post_id + '/comments/' + data.comment_id + '/replies', data)
         .then(response => {
             context.commit('loadComments', response.data)
         })
     },
+    deleteReply(context, data) {
+        console.log(data)
+        context.commit('init_comments_loading');
+        axios.delete('https://ob-forum-api.herokuapp.com/comment/' + data.comment_id + '/reply/' + data.reply_id + '/' + data.token)
+        .then(response => {
+            context.commit('finish_comments_loading');
+            context.commit('deleteReply', {comment_index: data.comment_index, reply_index: data.reply_index})
+        })
+        .catch(err => {
+            if (err.response) {
+                if (err.response.status === 403) {
+                    context.commit('finish_comments_loading')
+                    context.dispatch('logOut')
+                    context.dispatch('verificationErrorHandler')
+                }
+            }
+        })
+    },
     deleteComment(context, data) {//******FIX
         context.commit('init_comments_loading');
-        axios.delete('https://frontend-templates-oliverbth05.c9users.io:8081/posts/' + data.post_id + '/comments/' + data.comment_id)
+        axios.delete('https://ob-forum-api.herokuapp.com/posts/' + data.post_id + '/comments/' + data.comment_id)
         .then(response => {
             context.commit('deleteComment', data.index)
             context.commit('finish_comments_loading')
@@ -125,7 +147,7 @@ const actions = {
     },
     votePost(context, data) { 
         context.commit('init_post_loading_vote')
-        axios.put('https://frontend-templates-oliverbth05.c9users.io:8081/posts/' + data.post_id + '/votes', data)
+        axios.put('https://ob-forum-api.herokuapp.com/posts/' + data.post_id + '/votes', data)
         .then(response => {
             context.commit('votePost', data.voter_id);
             context.commit('finish_post_loading_vote');
@@ -136,7 +158,7 @@ const actions = {
     },
     voteComment(context, data) {//******FIX
         context.commit('init_comments_loading')
-        axios.put('https://frontend-templates-oliverbth05.c9users.io:8081/posts/' + data.post_id + '/comments/' + data.comment_id + '/votes', data)
+        axios.put('https://ob-forum-api.herokuapp.com/posts/' + data.post_id + '/comments/' + data.comment_id + '/votes', data)
         .then(response => {
             context.commit('loadComments', response.data)
         })

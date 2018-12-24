@@ -3,7 +3,7 @@
         <v-progress-circular
         :size="70"
         :width="4"
-        color="rgb(239, 134, 35)"
+        color="rgb(255, 255, 255)"
         indeterminate
         ></v-progress-circular>
     </div>
@@ -14,7 +14,9 @@
         
     <div class = 'container-1200 ' v-else>
             <div class = 'user'>
-                <img class = 'user__avatar' :src = 'userProfile.user.profileImage' /> 
+                <div class = 'user__avatar'>
+                    <i class="fas fa-user-alt"></i>
+                </div>
                 <h1 class = 'display-1 center'>{{userProfile.user.username}} 
                 </h1>
                 <br />

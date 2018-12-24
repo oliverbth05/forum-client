@@ -1,8 +1,8 @@
 <template>
     <div class = 'comment-container'>
         <div class = 'comment'>
-            <div>
-                <img class = 'comment__avatar' :src = 'profileImage' />
+            <div class = 'comment__avatar'>
+                <i class="fas fa-user-alt"></i>
             </div>
             <div class = 'comment__content'> 
                 <router-link class = 'comment__author'
@@ -14,7 +14,7 @@
                     <a v-if = '!showingReplies && replies.length > 0' @click = 'showReplies'>View Replies ({{replies.length}})</a>
                     <a v-if = 'showingReplies' @click = 'hideReplies'>Hide Replies</a>
                     <a v-if = 'user' @click = 'showReplyForm'>Reply</a>
-                    <a v-if = 'userOwned' @click = 'deleteComment({comment_id: comment_id, post_id: post_id, index: index})'> Delete </a>
+                    <a v-if = 'userOwned' @click = 'deleteComment({comment_id: comment_id, post_id: post_id, index: comment_index})'> Delete </a>
                     <router-link :to = "'/edit/comment/' + comment_id" v-if = 'userOwned'  >Edit</router-link>
                 </div>
             </div> 
@@ -42,14 +42,14 @@
                 token: token
                 })'>
                 <label class = 'label'>Reply</label>
-                <input class = 'input' v-model = 'replyBody'/>
+                <textarea class = 'textarea-small' v-model = 'replyBody'/>
                 <br />
                 <br />
                 <button class = 'button-inline btn-orange' type = 'submit'>Post</button>
                 <button class = 'button-inline btn-orange' @click = 'hideReplyForm'>Cancel</button>
         </form>
         <div v-if = 'showingReplies' class = 'comment__replies'>
-            <reply v-for = 'reply in replies' :reply_id = 'reply._id' :comment_id = 'comment_id' :body = 'reply.body' :date = 'reply.date' :author = 'reply.author' :author_id = 'reply.author_id' :author_profileImage = 'reply.author_profileImage'></reply>
+            <reply v-for = '(reply, index) in replies' :reply_id = 'reply._id' :reply_index = 'index' :comment_index = 'comment_index' :comment_id = 'comment_id' :body = 'reply.body' :date = 'reply.date' :author = 'reply.author' :author_id = 'reply.author_id' :author_profileImage = 'reply.author_profileImage'></reply>
         </div>
     </div>
 </template>
@@ -75,7 +75,7 @@
             'votes',
             'date',
             'replies',
-            'index',
+            'comment_index',
             'profileImage'
         ],
         

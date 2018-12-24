@@ -13,7 +13,9 @@
             <button @click = 'goBack' class ='button-inline btn-orange'><i class="fas fa-arrow-left"></i> Go Back</button>
             <div class = 'show__top-pane'>
                 <div class = 'show__author-info'>
-                    <img :src = 'post.profileImage' />
+                    <div class = 'user__avatar-small'>
+                        <i class="fas fa-user-alt"></i>
+                    </div>
                     <div>
                         <router-link :to = '"/user/" + post.author_id'>{{post.author}}</router-link>
                         <p>{{moment}}</p>
@@ -86,7 +88,7 @@
                 <h2 class = 'headline'><i class="fas fa-comments"></i> Comments <span class = 'comment-count'>{{comments.length}}</span></h2>
                 <comment 
                 v-for          = '(comment, index) in comments' 
-                :index = 'index'
+                :comment_index = 'index'
                 :key = 'comment._id'
                 :comment_id    = 'comment._id' 
                 :post_id       = 'post._id' 
@@ -98,7 +100,6 @@
                 :replies       = 'comment.replies'
                 :profileImage  = 'comment.author_profileImage'
                 ></comment>
-                <p v-if = 'comments.length === 0'>No Comments</p>
             </div>    
         </div>
     </div>

@@ -1,4 +1,5 @@
 .header-massive {
+    font-weight: lighter;
     display: block;
     font-size: 60px;
     text-align: center;
@@ -8,6 +9,31 @@
     animation: header-fade;
     animation-duration: .5s;
     animation-iteration-count: 1;
+    
+    @media screen and (max-width: 1000px) {
+        font-size: 40px;
+    }
+}
+
+.call2action {
+    transition: background .2s;
+    max-width: 250px;
+    display: block;
+    padding: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid $color2;
+    background: transparent;
+    margin: auto;
+    border-radius: 2px;
+    
+    &:hover {
+        background: $color2;
+    }
+    
 }
 
 .text {
@@ -17,28 +43,96 @@
     color: white;
     font-weight: lighter;
     line-height: 30px;
+    text-align: justify;
+    @media screen and (max-width: 1000px) {
+        font-size: 15px;
+        padding: 30px;
+    }
 }
 
 .full-section {
-    height: 100vh;
+    min-height: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.primary-tools {
+.features {
+    margin-top: 40px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+}
+
+.feature {
+    transition: background .2s;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 2px 2px 0 0;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    
+    i {
+        font-size: 55px;
+        padding: 30px;
+    }
+    
+    p {
+        font-size: 19px;
+        padding: 20px 0 20px 0;
+    }
+    
+    &:hover {
+        background: white;
+    }
+}
+
+.feature-active {
+    background: white;
+    border-radius: 2px 2px 0 0 ;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    
+    i {
+        font-size: 55px;
+        padding: 30px;
+    }
+    
+    p {
+        font-size: 19px;
+        padding: 20px 0 20px 0;
+    }
+    
+}
+
+.feature-description {
+    padding-top: 20px;
+    padding-bottom: 8px;
+    background: white;
+    font-size: 17px;
+    border-radius: 0 0 2px 2px;
+    text-align: center;
+}
+
+.primary-tools {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     justify-items: center;
     grid-gap: 10px;
     padding-top: 70px;
+    width: 100%;
     
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1200px) {
         grid-template-columns: repeat(2, 1fr)
     }
     
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 480px) {
+        padding-left: 10px;
+        padding-right: 10px;
         grid-template-columns: repeat(1, 1fr)
     }
     
@@ -55,6 +149,14 @@
         font-weight: lighter;
         letter-spacing: 2px;
         transition: background .5s;
+        
+        @media screen and (max-width: 600px){
+            padding: 10px;
+            font-size: 15px;
+            height: 150px;
+        }
+        
+        
         &:hover {
             background: rgba(255, 255, 255, 1);
         }
@@ -64,6 +166,11 @@
             display: block;
             font-size: 80px;
             text-align: center;
+            
+            @media screen and (max-width: 600px){
+                padding: 35px;
+                font-size: 35px;
+            }
         }
     }
 }
@@ -79,6 +186,12 @@
     
     @media screen and (max-width: 605px) {
             grid-template-columns: repeat(2, 1fr)
+    }
+    
+    @media screen and (max-width: 480px) {
+        padding-left: 10px;
+        padding-right: 10px;
+        grid-template-columns: repeat(1, 1fr)
     }
     
     div {
@@ -124,6 +237,48 @@
     animation-iteration-count: 1;
 }
 
+.fade-interval-5 {
+    animation: header-fade;
+    animation-duration: .9s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-6 {
+    animation: header-fade;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-7 {
+    animation: header-fade;
+    animation-duration: 1.1s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-8 {
+    animation: header-fade;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-9 {
+    animation: header-fade;
+    animation-duration: 1.3s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-10 {
+    animation: header-fade;
+    animation-duration: 1.4s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-11 {
+    animation: header-fade;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+}
+
 @keyframes header-fade {
     from {
         transform: scale(.4);
@@ -137,7 +292,7 @@
 }
 
 .bg-1 {
-    background: $color2;
+    background: linear-gradient(black, $color2);
 }
 
 .bg-2 {
@@ -145,5 +300,12 @@
 }
 
 .bg-3 {
-    background: linear-gradient($color4, $color5);
+    background: linear-gradient($color4, #6e5494);
+}
+
+.bg-4 {
+    background: linear-gradient(#6e5494, black);
+}
+.hide {
+    opacity: 0;
 }

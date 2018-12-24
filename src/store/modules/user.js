@@ -44,10 +44,10 @@ const actions = {
         
         context.commit('loading');
         
-        axios.get('https://frontend-templates-oliverbth05.c9users.io:8081/user/' + author_id + '/data/profile')
+        axios.get('https://ob-forum-api.herokuapp.com/user/' + author_id + '/data/profile')
         .then(response => {
             data.user = response.data;
-            return axios.get('https://frontend-templates-oliverbth05.c9users.io:8081/user/' + author_id + '/data/posts')
+            return axios.get('https://ob-forum-api.herokuapp.com/user/' + author_id + '/data/posts')
         })
         
         .then(response => {
