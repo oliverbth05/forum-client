@@ -29,3 +29,15 @@
         }
     }
 }
+
+@mixin hoverOrange {
+    &:hover {
+        color: $color2;
+    }
+}
+
+@mixin fadeInAnimation {
+    animation: fadeIn;
+    animation-duration: .3s;
+    animation-iteration-count: 1;
+}

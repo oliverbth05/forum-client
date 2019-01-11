@@ -1,12 +1,12 @@
-@import './animation.scss';
+
 @import './variables.scss';
 @import './layout.scss';
 @import './mixins.scss';
 @import './typography.scss';
 @import './helpers.scss';
+@import './animation.scss';
 
 @import './components/nav.scss';
-@import './components/form.scss';
 @import './components/loader.scss';
 @import './components/card.scss';
 @import './components/comment.scss';
@@ -37,19 +37,6 @@ html {
     @include respond(phone) {
         font-size: 80%;
     }
-   
-    
-    
-    
-    
-   
-    
-    
-    
-  
-   
-    
-    
 }
 
 * { 
@@ -60,7 +47,4 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.height-100 {
-    min-height: 100vh;
-}
 

@@ -1,12 +1,12 @@
 <template>
     <div class = 'comment-container'>
         <div class = 'comment'>
-            <div class = 'comment__avatar'>
+            <div class = 'comment__avatar m-r-1'>
                 <i class="fas fa-user-alt"></i>
-            </div>
+            </div> 
             <div class = 'comment__content'> 
                 <router-link class = 'comment__author'
-                :to = '/user/ + author_id'
+                :to = '/user/ + author_id' 
                 >{{author_username}}</router-link>
                 <p class = 'comment__date'>{{moment}}</p>
                 <p class = 'comment__body'>{{body}}</p>
@@ -19,21 +19,21 @@
                 </div>
             </div> 
             <div class = 'comment__vote'>
-                <p class = 'comment__vote-count'>{{votes.length}}</p>
+                <p class = 'p-r-1'>{{votes.length}}</p>
                 <i 
                 v-if = '!userHasVoted && user'
-                class   = "fas fa-arrow-circle-up comment-not-voted"
+                class   = "fas fa-arrow-circle-up comment-not-voted p-r-1"
                 @click = 'voteComment({
                     post_id: post_id,
                     voter_id: user._id,
                     comment_id: comment_id,
                     author_id: author_id
                 })'></i>
-                <i v-if = 'userHasVoted' class = 'fas fa-arrow-circle-up comment-voted'></i>
-                <i v-if = '!user' class = 'fas fa-arrow-circle-up'></i>
+                <i v-if = 'userHasVoted' class = 'fas fa-arrow-circle-up comment-voted p-r-1'></i>
+                <i v-if = '!user' class = 'fas fa-arrow-circle-up p-r-1'></i>
             </div>
         </div>
-        <form :class = "{'form-error reply-form' : replyError, 'reply-form' : !replyError}" v-if = 'user && showingReplyForm' @submit.prevent = 'validateReply({
+        <form  class = 'p-a-1 fadeIn' v-if = 'user && showingReplyForm' @submit.prevent = 'validateReply({
                 body: replyBody,
                 author: user.username,
                 author_id: user._id,
@@ -41,12 +41,10 @@
                 post_id: post_id,
                 token: token
                 })'>
-                <label class = 'label'>Reply</label>
-                <textarea class = 'textarea-small' v-model = 'replyBody'/>
-                <br />
-                <br />
-                <button class = 'button-inline btn-orange' type = 'submit'>Post</button>
-                <button class = 'button-inline btn-orange' @click = 'hideReplyForm'>Cancel</button>
+                <label>Reply</label>
+                <textarea class = 'input-block m-b-s' v-model = 'replyBody'/>
+                <button class = 'button-small button-orange' type = 'submit'>Post</button>
+                <button class = 'button-small button-orange' @click = 'hideReplyForm'>Cancel</button>
         </form>
         <div v-if = 'showingReplies' class = 'comment__replies'>
             <reply v-for = '(reply, index) in replies' :reply_id = 'reply._id' :reply_index = 'index' :comment_index = 'comment_index' :comment_id = 'comment_id' :body = 'reply.body' :date = 'reply.date' :author = 'reply.author' :author_id = 'reply.author_id' :author_profileImage = 'reply.author_profileImage'></reply>

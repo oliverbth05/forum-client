@@ -8,6 +8,7 @@ import EditPost from './pages/EditPost.vue';
 import EditComment from './pages/EditComment';
 import EditReply from './pages/EditReply';
 import About from './pages/About';
+import PageNotFound from './pages/PageNotFound';
 
 import { store } from './store/store';
 
@@ -101,6 +102,10 @@ export const routes = [
             store.dispatch('fetchUserProfile', to.params.id)
             next();
         }
+    },
+    {
+        path: "*",
+        component: PageNotFound
     }
 ]
 

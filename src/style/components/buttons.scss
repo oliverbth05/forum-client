@@ -4,7 +4,8 @@
     cursor: pointer;
     border-radius: 5px;
     padding: .5rem; 
-   
+    text-align: center;
+    text-decoration: none;
     
     &:active {
         outline: none;
@@ -16,16 +17,25 @@
 }
 
 .button-orange {
-    border: 2px solid $color2;
-    
+    border: 1.4px solid $color2;
+    color: $color2;
      &:hover {
         background: $color2;
         color: white;
     }
 }
 
+.button-red {
+    border: 1.4px solid $color4;
+    color: $color4;
+     &:hover {
+        background: $color4;
+        color: white;
+    }
+}
+
 .button-white {
-    border: 2px solid rgba(255, 255, 255, 0.7);
+    border: 1.4px solid rgba(255, 255, 255, 0.7);
     background: $color2;
     
     &:hover {
@@ -38,4 +48,11 @@
     @include buttonStyle;
     display: block;
     width: 100%;
+}
+
+.button-small {
+    @include buttonStyle;
+    display: inline-block;
+    
+    
 }

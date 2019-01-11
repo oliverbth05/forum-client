@@ -29,11 +29,9 @@
         display: block;
         text-align: center;
         text-transform: uppercase;
-        font-weight: lighter;
         cursor: pointer;
-        
         &:hover {
-             background: -webkit-linear-gradient(bottom, $color2, $color4);
+             background: -webkit-linear-gradient(bottom, $color2, $color2-lighter);
              -webkit-background-clip: text;
              -webkit-text-fill-color: transparent;    
         }
@@ -45,6 +43,10 @@
         justify-content: space-between;
         align-items: center;
         height: 100%;
+        
+        @include respond(tablet) {
+            display: none;
+        }
 
     }
     
@@ -68,7 +70,7 @@
 }
 
 .title-active {
-    background: -webkit-linear-gradient(bottom, $color2, $color4);
+    background: -webkit-linear-gradient(bottom, $color2, $color2-light);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -96,6 +98,10 @@
     &:hover {
         color: $color2;
     }
+    
+    @include respond(tablet) {
+            display: block;
+    }
 
 }
 
@@ -109,7 +115,7 @@
     z-index: 10;
     
     &-links {
-        margin-top: 55px;
+        margin-top: 50px;
     }
     
     &-link {
@@ -125,6 +131,9 @@
         
         p {
             margin-bottom: 0;
+            &:hover {
+                color: white;
+            }
         }
         
         &:hover {
@@ -148,4 +157,7 @@
     background: $color2;
     color: white;
     border-color: transparent;
+    p {
+        color: white;
+    }
 }

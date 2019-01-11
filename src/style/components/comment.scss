@@ -3,62 +3,42 @@
     grid-template-columns: 2fr 25fr 4fr;
     grid-template-rows: 1fr;
     align-items: center;
-    border-radius: 2px;
-
-    
-    &__content {
-  
-        
-    }
-
-    
-    &__body {
-    
-        color: $color1;
-
-    }
+    @include box;
+    background: white;
+    padding: .6rem;
+    margin-bottom: .6rem;
     
     &__avatar {
         background: black;
         color: white;
         border-radius: 50%;
-        height: 50px;
-        width: 50px;
+        height: 30px;
+        width: 30px;
         align-self: center;
         justify-self: center;
+        padding: 7px;
         
     }
     
-    &__date {
-       
+    &__date, &__author {
         display: inline-block;
-       
-        font-weight: lighter;
+        padding: .2rem;
+        font-size: .9rem;
     }
     
-    &__author {
-    
-        display: inline-block;
-        font-weight: normal;
-        color: black;
-        text-decoration: none;
-        &:hover {
-            color: $color2;
-        }
+    &__body {
+        padding: .2rem;    
     }
     
     &__options {
-     
+        padding: .2rem;
         
         a {
-            color: $color1;
-          
+            @include hoverOrange;
             cursor: pointer;
             text-decoration: none;
-            
-            &:hover {
-                color: $color2;
-            }
+            padding-right: .4rem;
+            font-size: .9rem;
         }
     }
     
@@ -66,19 +46,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
-        p {
-          
-        }
-        
-        i {
-         
-        }
-    }
-    
-    &__form {
-        background: rgba(255, 255, 255, 0.9);
-       
+
     }
 }
 
@@ -96,13 +64,14 @@
 }
 
 .reply {
-    
+    background: white;
+    @include box;
+    @include fadeInAnimation;
     display: grid;
     grid-template-columns: 2fr 25fr 4fr;
     grid-template-rows: 1fr;
-    border-radius: 2px;
-    background: rgb(230, 230, 230)
-    
+    margin-left: 1rem;
+    margin-bottom: 2rem;
     &__avatar {
         margin: auto;
         height: 60px;
@@ -114,5 +83,5 @@
 
 
 .reply-form {
-    background: rgba(255, 255 ,255, 0.9);
+    @include fadeInAnimation;
 }

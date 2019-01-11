@@ -13,10 +13,11 @@
     }
     
     &__avatar-small {
-    
-        height: 50px;
-        width: 50px;
-   
+        margin-right: 8px;
+        height: 40px;
+        width: 40px;
+        padding: 10px;
+        font-size: 20px;
         border-radius: 50%;
         color: white;
         background: black;

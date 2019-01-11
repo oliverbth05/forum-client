@@ -1,33 +1,36 @@
 <template>
     <div class = 'container-content-centered' v-if = 'edit_comment_loading'>
-        <v-progress-circular
-            :size="70"
-            :width="5"
-            color="rgb(239, 134, 35)"
-            indeterminate
-        ></v-progress-circular>
+        <loader>
+            
+        </loader>
     </div>
     
-    <div class = 'container-1200' v-else>
-        <form class = 'form' @submit.prevent = 'submitUpdate'>
-            <h1 class = 'display-1 center'>Edit Comment</h1>
-            <alert :show = 'validationError' :message = '"Comment cannot be empty."'></alert>
-            <label class = 'label'>Comment</label>
-            <textarea class = 'textarea-large' v-model = 'body'></textarea>
-            
-            <button class = 'button-block btn-orange' type = 'submit'>Submit</button>
-        </form>
+    <div class = 'container-content-centered' v-else>
+        <div class = 'container-600 p-a-1'>
+            <form @submit.prevent = 'submitUpdate'>
+                <h3 class = 'text-center font-normal p-b-2'>Edit Comment</h3>
+                <alert :show = 'validationError' :message = '"Comment cannot be empty."'></alert>
+                <label class = 'label'>Comment</label>
+                <textarea class = 'input-block m-b-s' v-model = 'body'></textarea>
+                <button class = 'button-small button-orange' type = 'submit'><i class="far fa-save"></i> Update</button>
+                <a class = 'button-small button-orange' @click = 'cancelEdit' ><i class="far fa-times-circle"></i> Cancel</a>
+                <a class = 'button-small button-red' @click = 'deleteComment'><i class="far fa-trash-alt"></i> Delete</a>
+            </form>
+        </div>
+       
     </div>
 </template>
 
 <script>
     import { mapGetters, mapActions, mapMutations } from 'vuex';
     import Alert from '../components/Alert.vue';
+    import Loader from '../components/Loader.vue';
     
     export default {
         
         components: {
-          'alert': Alert  
+          'alert': Alert  ,
+          'loader' : Loader
         },
         
         data() {
@@ -43,7 +46,7 @@
         },
         
         methods: {
-          ...mapActions(['updateEditComment']),  
+          ...mapActions(['updateEditComment', 'deleteEditComment']),  
             submitUpdate() {
                 if (!this.body) {
                     this.validationError = true
@@ -57,10 +60,17 @@
                         token: this.token
                     })
                 }
+            },
+            deleteComment() {
+                this.deleteEditComment({post_id: this.edit_comment.post_id, comment_id: this.edit_comment._id})
+            },
+            cancelEdit() {
+                this.$router.history.push({path: '/show/' + this.edit_comment.post_id})
             }
         },
         
         updated(){
+            console.log(this.edit_comment)
             if(!this.hasLoaded && !this.body) {
                 this.body = this.edit_comment.body
                 this.hasLoaded = true

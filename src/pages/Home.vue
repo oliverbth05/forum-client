@@ -11,7 +11,7 @@
            <loader></loader>
         </div>
         <alert :show = 'homeError' :message = 'homeError'></alert>
-            <div>
+            <div v-if = '!postsLoading' class = 'fadeIn'>
                 <card 
                     v-for       = 'blog in posts'
                     :key        = 'blog._id'
@@ -24,7 +24,7 @@
                     :voteCount  = 'blog.voteCount'
                 ></card>
             </div>
-        <button class = 'button-block button-white' v-if = '!endOfList && !homeError' :loading = 'morePostsLoading ? true : false' @click = 'fetchMoreHomePosts({sort: homePostsSort, page: currentPage })'>Show More Posts</button>      
+        <button class = 'button-block button-orange' v-if = '!endOfList && !homeError' :loading = 'morePostsLoading ? true : false' @click = 'fetchMoreHomePosts({sort: homePostsSort, page: currentPage })'>Show More Posts</button>      
         <p class = 'end-of-list' v-if = 'endOfList'>End of list.</p>
     </div>
 </template>

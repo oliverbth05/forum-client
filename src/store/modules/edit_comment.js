@@ -61,8 +61,17 @@ var actions = {
             }
         })
     },
-    deleteEditComment(){
-        
+    deleteEditComment(context, data){
+        context.commit('init_edit_comment_loading');
+        axios.delete('https://ob-forum-api.herokuapp.com/posts/' + data.post_id + '/comments/' + data.comment_id)
+        .then(response => {
+            context.commit('finish_edit_comment_loading')
+            router.history.push({path: '/show/' + data.post_id})
+        })
+        .catch(err => {
+            console.log(err)
+            
+        })
     },
     
     
