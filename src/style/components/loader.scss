@@ -1,16 +1,17 @@
 .loader {
     display: block;
-    position: fixed;
-    top: 40%;
-    right: 40%;
-    
-    border-bottom: 3px solid $color1;
+    border: 3px solid;
+    border-color: $color2-lighter $color2-lighter $color2-lighter $color2;
     border-radius: 50%;
     height: 100px;
     width: 100px;
     animation: spin;
-    animation-duration: 1s;
+    animation-duration: .5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    
+}
+
+.loader-container {
     
 }

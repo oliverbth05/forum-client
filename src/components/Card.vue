@@ -1,9 +1,9 @@
 <template>
-    <router-link tag = 'div' :to = '"/show/" + id' class = 'card'>
+    <router-link tag = 'div' :to = '"/show/" + id' class = 'card p-a-1 box'>
         <div class = 'card__info'>
-            <h3 class = 'title'><i v-if = 'image' class="far fa-image"></i>{{ title}}</h3>
-            <p class = 'card__author'>{{author}}</p>
-            <p class = 'card__date'>{{moment}}</p>
+            <h4 class = 'card__title font-normal'><i v-if = 'image' class="far fa-image"></i>{{ title}}</h4>
+            <p>{{author}}</p>
+            <p class = ''>{{moment}}</p>
         </div>
         <div class = 'card__vote'>
             <div>

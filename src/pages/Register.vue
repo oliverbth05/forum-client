@@ -1,37 +1,29 @@
 <template>
     
     <div class = 'container-content-centered bg-gradient' v-if = 'registrationLoading'>
-        <v-progress-circular
-        :size="70"
-        :width="5"
-        color = 'rgb(255, 255, 255)'
-        indeterminate
-        ></v-progress-circular>
+        <loader></loader>
     </div>
     
-    <div v-else class = 'container-content-centered bg-gradient'>
-            <div class = 'container-600'>
+    <div v-else class = 'container-content-centered bg-gradient p-a-1'>
+            <div class = 'container-500'>
                     <alert :show = 'registrationError' :message = 'registrationError' />
-                    <form @submit.prevent = 'register({email: email, password: password, username: username})' :class = "{'form-error form' : registrationError, 'form' : !registrationError}">
-                        <h1 class = 'center'>Register</h1>
-                        <label class = 'label'>Email</label>
-                        <input class = 'input' type = 'email' required v-model = 'email' />
-                        <br />
-                        <br />
-                        <label class = 'label'>Username</label>
-                        <input class = 'input' type = 'text' required v-model = 'username' />
-                        <br />
-                        <br />
-                        <label class = 'label'>Password</label>
-                        <input  type = 'password' required v-model = 'password' class = 'input'/>
-                        <br />
-                        <br />
-                        <label class = 'label'>Confirm Password</label>
-                        <input  type = 'password' required v-model = 'confirmPassword' class = 'input'/>
-                        <br />
-                        <br />
-                        <button type = 'submit' class = 'button-block btn-orange'>Submit</button>
-                        <br />
+                    <form @submit.prevent = 'register({email: email, password: password, username: username})' class = 'p-a-2 bg-white box'>
+                        <h3 class = 'p-b-2 font-light text-center'>Register</h3>
+                        
+                        <label>Email</label>
+                        <input class = 'input-block m-b-1' type = 'email' required v-model = 'email' />
+                 
+                        <label>Username</label>
+                        <input class = 'input-block m-b-1' type = 'text' required v-model = 'username' />
+                     
+                        <label>Password</label>
+                        <input class = 'input-block m-b-1' type = 'password' required v-model = 'password'/>
+                     
+                        <label>Confirm Password</label>
+                        <input class = 'input-block m-b-1' type = 'password' required v-model = 'confirmPassword'/>
+                      
+                        <button type = 'submit' class = 'button-block button-orange m-b-1'>Submit</button>
+                      
                         <router-link class = 'form__link' to = '/login'>Already have an account?</router-link>
                     </form>
             </div>
@@ -41,10 +33,13 @@
 <script>
     import { mapGetters, mapActions, mapMutations } from 'vuex';
     import Alert from '../components/Alert';
+    import Loader from '../components/Loader';
+    
     export default {
         
         components: {
-            'alert': Alert  
+            'alert': Alert,
+            'loader': Loader
         },
         
         data() {

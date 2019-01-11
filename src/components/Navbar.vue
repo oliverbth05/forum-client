@@ -3,12 +3,13 @@
         <div :class = '{"nav nav-hide" : hide,  "nav nav-show" : !hide}'>
             
             
-            <div class = 'nav__container'>
+            <div class = 'nav__container p-a-2'>
                 
-                <router-link
+                <router-link 
                 to = '/home'
-                class = 'nav__title'
+                class = 'nav__title color-white'
                 active-class = 'title-active'
+                tag = 'h3'
                 >Forum</router-link>
                 
                 <div class = 'nav__links'>
@@ -16,6 +17,7 @@
                     <router-link 
                     exact
                     class           = 'nav__link'
+                    tag = 'a'
                     active-class = 'nav-active'
                     to              = '/'
                     ><i class="fas fa-info-circle"></i> About</router-link>
@@ -23,6 +25,7 @@
                     <router-link 
                     v-if = 'user'
                     class           = 'nav__link'
+                    tag = 'a'
                     active-class = 'nav-active'
                     to              = '/new'
                     ><i class="fas fa-pen"></i> New Post</router-link>
@@ -31,12 +34,15 @@
                     v-if = 'user'
                     class = 'nav__link'
                     active-class = 'nav-active'
+                    
+                    tag = 'a'
                     :to = '/user/ + user._id'
                     ><i class="fas fa-user"></i> {{user.username}}</router-link>
                         
                     <a
                     v-if = 'user'
                     class = 'nav__link nav-auth' 
+                    tag = 'a'
                     @click = 'logOut'
                     ><i class="fas fa-sign-out-alt"></i> Log Out</a>
                         
@@ -45,11 +51,13 @@
                     class = 'nav__link nav-auth'
                     to = '/login'
                     active-class = 'nav-active'
+                    tag = 'a'
                     ><i class="fas fa-sign-in-alt"></i>  Log In</router-link>
                     
                     <router-link 
                     v-if = '!user' 
                     class = 'nav__link nav-auth'
+                    tag = 'a'
                     to = '/register'
                     active-class = 'nav-active'
                     ><i class="fas fa-user-plus"></i>  Register</router-link>

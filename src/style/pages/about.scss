@@ -1,18 +1,12 @@
 .header-massive {
     font-weight: lighter;
     display: block;
-    font-size: 60px;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 10px;
     color: white;
     animation: header-fade;
     animation-duration: .5s;
     animation-iteration-count: 1;
-    
-    @media screen and (max-width: 1000px) {
-        font-size: 40px;
-    }
 }
 
 .call2action {
@@ -20,7 +14,6 @@
     max-width: 250px;
     display: block;
     padding: 15px;
-    font-size: 20px;
     text-decoration: none;
     color: white;
     text-transform: uppercase;
@@ -39,15 +32,10 @@
 .text {
     max-width: 1200px;
     padding: 20px;
-    font-size: 18px;
     color: white;
     font-weight: lighter;
     line-height: 30px;
     text-align: justify;
-    @media screen and (max-width: 1000px) {
-        font-size: 15px;
-        padding: 30px;
-    }
 }
 
 .full-section {
@@ -75,12 +63,12 @@
     cursor: pointer;
     
     i {
-        font-size: 55px;
+    
         padding: 30px;
     }
     
     p {
-        font-size: 19px;
+     
         padding: 20px 0 20px 0;
     }
     
@@ -97,22 +85,19 @@
     cursor: pointer;
     
     i {
-        font-size: 55px;
-        padding: 30px;
+     
+  
     }
     
     p {
-        font-size: 19px;
-        padding: 20px 0 20px 0;
+       
+       
     }
     
 }
 
 .feature-description {
-    padding-top: 20px;
-    padding-bottom: 8px;
     background: white;
-    font-size: 17px;
     border-radius: 0 0 2px 2px;
     text-align: center;
 }
@@ -123,23 +108,11 @@
     align-items: center;
     justify-items: center;
     grid-gap: 10px;
-    padding-top: 70px;
     width: 100%;
     
-    @media screen and (max-width: 1200px) {
-        grid-template-columns: repeat(2, 1fr)
-    }
-    
-    @media screen and (max-width: 480px) {
-        padding-left: 10px;
-        padding-right: 10px;
-        grid-template-columns: repeat(1, 1fr)
-    }
     
     
     &__el {
-        font-size: 18px;
-        padding: 20px;
         border-radius: 2px;
         background: rgba(255, 255, 255, 0.6);
         width: 100%;
@@ -147,30 +120,16 @@
         text-align: center;
         text-transform: uppercase;
         font-weight: lighter;
-        letter-spacing: 2px;
         transition: background .5s;
-        
-        @media screen and (max-width: 600px){
-            padding: 10px;
-            font-size: 15px;
-            height: 150px;
-        }
-        
+
         
         &:hover {
             background: rgba(255, 255, 255, 1);
         }
         
         i {
-            padding: 70px;
             display: block;
-            font-size: 80px;
             text-align: center;
-            
-            @media screen and (max-width: 600px){
-                padding: 35px;
-                font-size: 35px;
-            }
         }
     }
 }
@@ -178,32 +137,23 @@
 .secondary-tools {
     width: 100%;
 
-    margin-top: 10px;
     border-radius: 2px;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(3, 1fr);
     
-    @media screen and (max-width: 605px) {
-            grid-template-columns: repeat(2, 1fr)
-    }
-    
-    @media screen and (max-width: 480px) {
-        padding-left: 10px;
-        padding-right: 10px;
-        grid-template-columns: repeat(1, 1fr)
-    }
+ 
     
     div {
         background: rgba(255, 255, 255, 0.6);
         text-transform: uppercase;
-        padding: 30px;
+       
         text-align: center;
         border-radius: 2px;
         font-weight: lighter;
         letter-spacing: 2px;
         transition: background .5s;
-        font-size: 15px;
+       
         &:hover {
             background: rgba(255, 255, 255, 1);
         }

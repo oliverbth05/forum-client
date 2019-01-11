@@ -8,12 +8,7 @@
         </div>
         <br />
         <div v-if = 'postsLoading' class = 'container-content-centered'>
-            <v-progress-circular
-            :size="70"
-            :width="5"
-            color="rgb(255, 255, 255)"
-            indeterminate
-            ></v-progress-circular>
+           <loader></loader>
         </div>
         <alert :show = 'homeError' :message = 'homeError'></alert>
             <div>
@@ -29,20 +24,22 @@
                     :voteCount  = 'blog.voteCount'
                 ></card>
             </div>
-        <v-btn v-if = '!endOfList && !homeError' :loading = 'morePostsLoading ? true : false' color="rgb(239, 134, 35)" large @click = 'fetchMoreHomePosts({sort: homePostsSort, page: currentPage })' block>Show More Posts</v-btn>      
+        <button class = 'button-block button-white' v-if = '!endOfList && !homeError' :loading = 'morePostsLoading ? true : false' @click = 'fetchMoreHomePosts({sort: homePostsSort, page: currentPage })'>Show More Posts</button>      
         <p class = 'end-of-list' v-if = 'endOfList'>End of list.</p>
     </div>
 </template>
 
 <script>
     import { mapGetters, mapActions, mapMutations } from 'vuex';
+    import Loader from '../components/Loader.vue';
     import Card from '../components/Card.vue';
     import Alert from '../components/Alert.vue';
     export default {
         
         components: {
             'card' : Card,
-            'alert' : Alert
+            'alert' : Alert,
+            'loader' : Loader
         },
         
         computed:  {

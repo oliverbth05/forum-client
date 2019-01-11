@@ -1,0 +1,31 @@
+@mixin respond($bp) {
+    @if $bp == phone {
+        @media (max-width: 26.5625em) {
+            @content
+        }
+    }
+    
+    @if $bp == tablet {
+        @media (max-width: 48em ) {
+            @content
+        }
+    } 
+    
+    @if $bp == laptop {
+        @media (max-width: 64em ) {
+            @content
+        }
+    }
+    
+    @if $bp == dektop {
+        @media (max-width: 90em ) {
+            @content
+        }
+    }
+    
+    @if $bp == huge {
+        @media (max-width: 160em ) {
+            @content
+        }
+    }
+}

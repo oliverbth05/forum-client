@@ -1,14 +1,13 @@
 .nav {
     top: 0;
-    height: 55px;
-    
+    height: 50px;
     // background: linear-gradient(to top, rgb(40, 40, 40), rgb(55, 55, 55));
     background: black;
-    
     position: fixed;
     width: 100%;
     transition: all .2s;
     z-index: 11;
+    
     &-hide{
         transform:translateY(-55px);
     }
@@ -20,32 +19,25 @@
     &__container {
         margin: auto;
         height: 100%;
-        padding: 10px;
         max-width: 1200px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @media screen and (max-width: 900px) {
-            justify-content: center;
-        }
     }
     &__title {
         transition: all .2s;
-        @include specialFont(30px, $color3);
         display: block;
         text-align: center;
-        letter-spacing: 3px;
-        font-weight: 300;
+        text-transform: uppercase;
+        font-weight: lighter;
+        cursor: pointer;
         
         &:hover {
              background: -webkit-linear-gradient(bottom, $color2, $color4);
              -webkit-background-clip: text;
              -webkit-text-fill-color: transparent;    
         }
-        
-        @media screen and (max-width: 900px) {
-            padding:0;
-        }
+ 
     }
     
     &__links {
@@ -53,23 +45,17 @@
         justify-content: space-between;
         align-items: center;
         height: 100%;
-        @media screen and (max-width: 900px) {
-            display: none;
-        }
+
     }
     
     &__link {
         transition: all .2s;
-        font-size: 15px;
         font-weight: normal;
-        text-transform: uppercase;
-        letter-spacing: 1px;
         color: $color3;
-        padding: 17px;
         border-bottom: 2.4px solid transparent;
         text-align: center;
         text-decoration: none;
-        
+        padding: .8rem;
         &:hover {
             color: $color2;
         }
@@ -110,9 +96,7 @@
     &:hover {
         color: $color2;
     }
-    @media screen and (max-width: 900px) {
-        display: block;
-    }
+
 }
 
 .nav__drawer {
@@ -137,7 +121,6 @@
         padding: 10px;
         text-align: center;
         width: 100%;
-        font-size: 20px;
         text-decoration: none;
         
         p {

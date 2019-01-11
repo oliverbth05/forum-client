@@ -1,29 +1,19 @@
 <template>
     <div class = 'container-content-centered bg-gradient' v-if = 'loginLoading'>
-        <v-progress-circular
-        :size="70"
-        :width="5"
-        color = 'rgb(255, 255, 255)'
-        indeterminate
-        ></v-progress-circular>
+        <loader></loader>
     </div>
     
-    <div v-else class = 'container-content-centered bg-gradient'>
-            <div class = 'container-600'>
+    <div v-else class = 'container-content-centered bg-gradient p-a-1'> 
+            <div class = 'container-500'>
                     <alert :show = 'verificationError' :message = '"Your credentials have expired, please log in again."' />
                     <alert :show = 'loginError' :message = 'loginError' />
-                    <form @submit.prevent = 'logIn({email: email, password: password})' :class = "{'form-error form' : loginError, 'form' : !loginError}">
-                        <h1 class = 'center'>Log In</h1>
-                        <label class = 'label'>Email</label>
-                        <input class = 'input' type = 'email' required v-model = 'email' />
-                        <br />
-                        <br />
-                        <label class = 'label'>Password</label>
-                        <input  type = 'password' required v-model = 'password' class = 'input'/>
-                        <br />
-                        <br />
-                        <button type = 'submit' class = 'button-block btn-orange'>Submit</button>
-                        <br />
+                    <form @submit.prevent = 'logIn({email: email, password: password})' class = 'p-a-2 bg-white box'>
+                        <h3 class = 'p-b-2 font-light text-center'>Log In</h3>
+                        <label>Email</label>
+                        <input class = 'input-block m-b-1' type = 'email' required v-model = 'email' />
+                        <label>Password</label>
+                        <input class = 'input-block m-b-1'   type = 'password' required v-model = 'password'/>
+                        <button class = 'button-block button-orange m-b-1' type = 'submit'>Submit</button>
                         <router-link class = 'form__link' to = '/register'>Create an account</router-link>
                     </form>
             </div>
@@ -33,10 +23,12 @@
 <script>
     import {mapGetters, mapActions, mapMutations} from 'vuex';
     import Alert from '../components/Alert';
+    import Loader from '../components/Loader';
     export default {
         
         components: {
-            'alert': Alert  
+            'alert': Alert  ,
+            'loader': Loader
         },
         
         data() {

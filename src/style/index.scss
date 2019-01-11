@@ -1,13 +1,17 @@
 @import './animation.scss';
 @import './variables.scss';
 @import './layout.scss';
+@import './mixins.scss';
 @import './typography.scss';
+@import './helpers.scss';
 
 @import './components/nav.scss';
 @import './components/form.scss';
 @import './components/loader.scss';
 @import './components/card.scss';
 @import './components/comment.scss';
+@import './components/buttons.scss';
+@import './components/inputs.scss';
 
 @import './pages/auth.scss';
 @import './pages/show.scss';
@@ -15,17 +19,46 @@
 @import './pages/home.scss';
 @import './pages/about.scss';
 
+
+html {
+    font-size: 62.5%;
+     @include respond(huge) {
+        font-size: 100%;
+    }
+    @include respond(desktop) {
+        font-size: 95%;
+    }
+    @include respond(laptop) {
+        font-size: 90%;
+    }
+     @include respond(tablet) {
+        font-size: 85%;
+    }
+    @include respond(phone) {
+        font-size: 80%;
+    }
+   
+    
+    
+    
+    
+   
+    
+    
+    
+  
+   
+    
+    
+}
+
 * { 
-    font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-
-
 
 .height-100 {
     min-height: 100vh;

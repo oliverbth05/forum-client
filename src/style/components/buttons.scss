@@ -1,0 +1,41 @@
+@mixin buttonStyle {
+    transition: background .2s;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: .5rem; 
+   
+    
+    &:active {
+        outline: none;
+    }
+    
+    &:focus {
+        outline: none;
+    }
+}
+
+.button-orange {
+    border: 2px solid $color2;
+    
+     &:hover {
+        background: $color2;
+        color: white;
+    }
+}
+
+.button-white {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background: $color2;
+    
+    &:hover {
+        background: rgba(255, 255, 255, 0.7);
+        color: black;
+    }
+}
+
+.button-block {
+    @include buttonStyle;
+    display: block;
+    width: 100%;
+}

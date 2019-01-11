@@ -1,11 +1,3 @@
-@mixin specialFont($size, $color) {
-    font-size: $size;
-    color: $color;
-    letter-spacing: 2px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
 @mixin hoverColor($color){
     &:hover {
         color: $color;
@@ -17,19 +9,34 @@
     text-align: center;
 }
  
+h1, h2, h3, h4 {
+    font-family: 'Open Sans', sans-serif;
+    color: $heading;
+} 
+ 
 h1 {
-    font-size: 32px;
-    font-weight: normal;
-    padding: 10px 0px 10px 0px;
-    color: $color1;
-    font-weight: 300;
+    font-size: 3rem;
 }
 
 h2 {
-    font-weight: normal;
-    padding: 20px 0px 20px 0px;
+    font-size: 2.25rem;
 }
 
-.body-text {
-    
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.125rem;
+}
+
+label {
+    display: block;
+    padding-bottom: .4rem;    
+}
+
+p, a, label, button, input {
+    color: $body;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
 }

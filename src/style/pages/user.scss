@@ -1,14 +1,10 @@
 .user {
-   
-   margin-top: 50px;
-   padding: 10px;
+
    
     &__avatar {
-        padding-top: 25px;
-        padding-left: 37px;
+      
         background: black;
         color: white;
-        font-size: 80px;
         display: block;
         border-radius: 50%;
         height: 150px;
@@ -17,12 +13,10 @@
     }
     
     &__avatar-small {
-        margin-right: 10px;
+    
         height: 50px;
         width: 50px;
-        padding-top: 10px;
-        padding-left: 13px;
-        font-size: 25px;
+   
         border-radius: 50%;
         color: white;
         background: black;

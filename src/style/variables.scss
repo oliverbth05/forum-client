@@ -4,10 +4,12 @@ $shadow: 0px 2px 3px 0px rgba(0,0,0,0.47);
 /* RGB */ 
 $color1: rgba(41, 47, 54, 1);
 // $color2: rgba(78, 205, 196, 1);
-$color2: rgb(239, 134, 35);
+$color2: #FF6849;
+$color2-light: #FF9E8B;
+$color2-lighter: #FFB8AA;
 $color2-dark: rgb(214, 120, 32);
 $color3: rgba(247, 255, 247, 1);
-$color4: rgba(255, 107, 107, 1);
+$color4: #90323D;
 $color4-dark: rgba(225, 77, 77, 1);
 $color5: rgba(255, 230, 109, 1);
 
@@ -16,27 +18,17 @@ $grey-2: rgb(180, 180, 180);
 $grey-3: rgb(210, 210, 210);
 $grey-4: rgb(230, 230, 230);
  
-body {
-    background: linear-gradient(to right, $color2, $color4)    
-}
-
-@mixin box {
-    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.3);
-    border-radius: 2px;
-}
-
-.box {
-    @include box
-}
+$heading: #2D3144;
+$body: #424657;
  
-.bg-white {
-    background: white;
+ 
+body {
+    // background: linear-gradient(to right, $color2, #E6C79C)    
+    background: #F4F2F3;
 }
+
+
 
 .bg-black {
     background: $color2;
 }
-.sort-btn-active {
-    background: $color2;
-}
- 
