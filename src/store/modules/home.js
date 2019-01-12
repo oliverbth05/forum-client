@@ -1,6 +1,7 @@
-import axios    from 'axios';
+import axios from 'axios';
 
 const state = {
+    
     firstLoad: true,
     homePosts: [],
     homePostsSort: 'new',
@@ -12,33 +13,37 @@ const state = {
 }
 
 const getters = {
-    firstLoad: (state) => {
+
+    firstLoad (state) {
         return state.firstLoad
     },
-    posts: (state) => {
+    posts (state) {
        return state.homePosts
     }, 
-    homeError: (state) => {
+    homeError (state) {
         return state.homeError
     },
-    homePostsSort: (state) => {
+    homePostsSort (state) {
         return state.homePostsSort
     },
-    currentPage: (state) => {
+    currentPage (state) {
         return state.currentPage
     },
-    morePostsLoading: (state) => {
+    morePostsLoading (state) {
         return state.morePostsLoading
     },
-    endOfList: (state) => {
+    endOfList (state) {
         return state.endOfList
     },
-    postsLoading: (state) => {
+    postsLoading (state) {
         return state.postsLoading
     }
 }
 
 const mutations = {
+
+
+
     loadHomePosts(state, posts) {
         state.homePosts = state.homePosts.concat(posts);
         state.currentPage ++;

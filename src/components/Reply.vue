@@ -1,5 +1,5 @@
 <template>
-    <div class = 'reply'>
+    <div class = 'reply p-a-1'>
         <div class = 'comment__avatar'>
                 <i class="fas fa-user-alt"></i>
             </div>

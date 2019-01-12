@@ -2,7 +2,7 @@
     top: 0;
     height: 50px;
     // background: linear-gradient(to top, rgb(40, 40, 40), rgb(55, 55, 55));
-    background: black;
+    background: $color1;
     position: fixed;
     width: 100%;
     transition: all .2s;
@@ -25,6 +25,7 @@
         align-items: center;
     }
     &__title {
+        font-weight: lighter;
         transition: all .2s;
         display: block;
         text-align: center;

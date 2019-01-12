@@ -1,0 +1,31 @@
+.banner {   
+position: fixed;
+bottom: 0px;
+width: 100%;
+z-index: 2;
+animation-timing-function: ease-in;
+animation: slideUp;
+animation-duration: 3.2s;
+animation-iteration-count: 1;
+
+    h3 {
+        @include box;
+        font-weight: lighter;
+        width: 100%;
+        color: white;
+        display: block;
+        text-align: center;
+        background: linear-gradient(to right, $color2, $color2-dark);
+        padding: 1rem;
+        margin: auto;
+       
+    }
+}
+
+// .banner-show {
+//     transform: translateY(0px)
+// }
+
+// .banner-hide {
+//     transform: translateY(70px)
+// }

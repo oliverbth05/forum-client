@@ -3,7 +3,7 @@ import {router} from '../../main';
 const state = {
     user:null,
     token:null,
-    
+    welcomeBanner: false,
     loginError: null,
     loginLoading: false,
 
@@ -14,6 +14,9 @@ const state = {
 }
 
 const getters = {
+    welcomeBanner (state) {
+        return state.welcomeBanner
+    },
     token: (state) => {
         return state.token
     },
@@ -38,6 +41,17 @@ const getters = {
 }
 
 const mutations = {
+
+    
+    showWelcomeBanner(state) {
+        state.welcomeBanner = true
+    },
+
+    hideWelcomeBanner(state) {
+        console.log('Hit')
+        state.welcomeBanner = false
+    },
+
     resetToken(state) {
         state.token = null
     },
@@ -107,6 +121,11 @@ const actions = {
             window.localStorage.setItem('user', JSON.stringify(response.data.user));
             window.localStorage.setItem('token', JSON.stringify(response.data.token));
             router.history.push('/home')
+            context.commit('showWelcomeBanner')
+            setTimeout(() => {
+                context.commit('hideWelcomeBanner')
+            }, 3000)
+            
         })
         .catch(err => {
             console.log(err.response.data.error)

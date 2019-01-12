@@ -9,7 +9,7 @@
             <form @submit.prevent = 'submitEdit' class = 'form'>
                 <h3 class = 'text-center p-b-2 font-normal'>Edit Reply</h3>
                 <label>Reply</label>
-                <textarea class = 'input-block' v-model = 'body'></textarea>
+                <textarea class = 'input-block m-b-s' v-model = 'body'></textarea>
                 <button class = 'button-small button-orange'><i class="far fa-save"></i> Update</button>
                 <button @click = 'cancelEdit' class = 'button-small button-orange'><i class="far fa-times-circle"></i> Cancel</button>
                 <button @click = 'deleteEditReply({comment_id: edit_reply._id, reply_id: edit_reply.replies[0]._id, token: token})'class = 'button-small button-red'><i class="far fa-trash-alt"></i> Delete</button>

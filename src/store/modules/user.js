@@ -4,7 +4,6 @@ import {router} from '../../main';
 const state = {
     userProfile: null,
     userProfileError: null,
-    
     editError: null,
     edit_username: null,
     edit_summary: null,
@@ -12,6 +11,8 @@ const state = {
 } 
 
 const getters = {
+    
+    
     userProfile: (state) => {
         return state.userProfile
     },
@@ -22,6 +23,9 @@ const getters = {
 }
 
 const mutations = {
+
+
+
     loadUserProfile(state, data) {
         state.userProfile = data
     },

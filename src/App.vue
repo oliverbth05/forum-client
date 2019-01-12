@@ -1,22 +1,26 @@
 <template>
   <div id="app">
     <nav-bar></nav-bar>
+    <banner v-if = 'welcomeBanner' />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
   import Navbar   from './components/Navbar';
+  import Banner from './components/Banner';
+
   import {mapMutations, mapGetters} from 'vuex';
   export default  {
     name: 'app',
     
     components: {
-      'nav-bar' : Navbar
+      'nav-bar' : Navbar,
+      'banner' : Banner
     },
     
     computed: {
-      ...mapGetters(['token', 'user', 'scrollPos'])
+      ...mapGetters(['token', 'user', 'scrollPos', 'welcomeBanner'])
     },
     
     created() {

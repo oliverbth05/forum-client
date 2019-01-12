@@ -48,6 +48,27 @@
   }
 }
 
+@keyframes slideUp {
+  0% {
+    transform: translateY(60px)
+  }
+
+  15% {
+    transform: translateY(0px)
+  }
+
+  85% {
+    transform: translateY(0px);
+  }
+
+
+  100% {
+    transform: translateY(60px)
+  }
+
+
+}
+
 
 .fadeIn {
     @include fadeInAnimation
