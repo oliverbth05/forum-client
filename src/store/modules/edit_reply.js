@@ -31,7 +31,7 @@ const mutations = {
 const actions = {
     fetchEditReply(context, data) {
         context.commit('init_edit_reply_loading');
-        axios.get('https://ob-forum-client.herokuapp.com/comment/' + data.comment_id + '/replies/' + data.reply_id)
+        axios.get('https://ob-forum-api.herokuapp.com/comment/' + data.comment_id + '/replies/' + data.reply_id)
         .then(response => {
             console.log(response.data, 'Response')
             context.commit('finish_edit_reply_loading');
@@ -43,7 +43,7 @@ const actions = {
     },
     updateEditReply(context, data) { 
         context.commit('init_edit_reply_loading');
-        axios.put('https://ob-forum-client.herokuapp.com/comment/reply', data)
+        axios.put('https://ob-forum-api.herokuapp.com/comment/reply', data)
         .then(response => {
             context.commit('finish_edit_reply_loading')
             router.history.go(-1)
@@ -61,7 +61,7 @@ const actions = {
     deleteEditReply(context, data) {
         console.log(data)
         context.commit('init_edit_reply_loading');
-        axios.delete('https://ob-forum-client.herokuapp.com/comment/' + data.comment_id + '/reply/' + data.reply_id + '/' + data.token)
+        axios.delete('https://ob-forum-api.herokuapp.com/comment/' + data.comment_id + '/reply/' + data.reply_id + '/' + data.token)
         .then(response => {
             router.history.go(-1)
         })

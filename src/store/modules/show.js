@@ -178,7 +178,7 @@ const actions = {
     },
     deleteComment(context, data) {//******FIX
         context.commit('init_comments_loading');
-        axios.delete('https://ob-forum-client.herokuapp.com/posts/' + data.post_id + '/comments/' + data.comment_id)
+        axios.delete('https://ob-forum-api.herokuapp.com/posts/' + data.post_id + '/comments/' + data.comment_id)
         .then(response => {
             context.commit('deleteComment', data.index)
             context.commit('finish_comments_loading')
@@ -190,7 +190,7 @@ const actions = {
     },
     votePost(context, data) { 
         context.commit('init_post_loading_vote')
-        axios.put('https://ob-forum-client.herokuapp.com/posts/' + data.post_id + '/votes', data)
+        axios.put('https://ob-forum-api.herokuapp.com/posts/' + data.post_id + '/votes', data)
         .then(response => {
             context.commit('votePost', data.voter_id);
             context.commit('finish_post_loading_vote');
@@ -201,7 +201,7 @@ const actions = {
     },
     voteComment(context, data) {//******FIX
         context.commit('init_comments_loading')
-        axios.put('https://ob-forum-client.herokuapp.com/posts/' + data.post_id + '/comments/' + data.comment_id + '/votes', data)
+        axios.put('https://ob-forum-api.herokuapp.com/posts/' + data.post_id + '/comments/' + data.comment_id + '/votes', data)
         .then(response => {
             context.commit('loadComments', response.data)
         })

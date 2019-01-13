@@ -36,7 +36,7 @@ const actions = {
         
         context.commit('init_create_loading');
         
-        axios.post('https://ob-forum-client.herokuapp.com/posts', data)
+        axios.post('https://ob-forum-api.herokuapp.com/posts', data)
         .then(response => {
             context.commit('createErrorReset')
             context.commit('finish_create_loading')

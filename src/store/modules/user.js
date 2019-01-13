@@ -48,10 +48,10 @@ const actions = {
         
         context.commit('loading');
         
-        axios.get('https://ob-forum-client.herokuapp.com/user/' + author_id + '/data/profile')
+        axios.get('https://ob-forum-api.herokuapp.com/user/' + author_id + '/data/profile')
         .then(response => {
             data.user = response.data;
-            return axios.get('https://ob-forum-client.herokuapp.com/user/' + author_id + '/data/posts')
+            return axios.get('https://ob-forum-api.herokuapp.com/user/' + author_id + '/data/posts')
         })
         
         .then(response => {
