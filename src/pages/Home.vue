@@ -22,6 +22,7 @@
                     :author_id  = 'blog.author_id'
                     :image      = 'blog.image'
                     :voteCount  = 'blog.voteCount'
+                    :views      = 'blog.views'
                 ></card>
             </div>
             <loader-button v-if = '!endOfList && !homeError && !postsLoading' :loading = 'morePostsLoading ? true : false'></loader-button>

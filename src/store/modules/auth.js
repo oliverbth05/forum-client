@@ -102,7 +102,6 @@ const mutations = {
 
 const actions = {
     verificationErrorHandler(context) {
-        console.log('reached')
         context.commit('verificationErrorDidOccur');
         
         setTimeout(() => {
@@ -111,7 +110,7 @@ const actions = {
     },
     logIn(context, data) {
         context.commit('startLoginLoading')
-        axios.post('https://ob-forum-api.herokuapp.com/user/auth/login', {
+        axios.post('http://localhost:3000/user/auth/login', {
             email: data.email,
             password: data.password
         })
@@ -128,7 +127,6 @@ const actions = {
             
         })
         .catch(err => {
-            console.log(err.response.data.error)
             context.commit('loginErrorDidOccur', err.response.data.error)
             context.commit('finishLoginLoading');
         })
@@ -139,7 +137,7 @@ const actions = {
     },
     register(context, data) {
         context.commit('startRegistrationLoading')
-        axios.post('https://ob-forum-api.herokuapp.com/user/auth/register', {
+        axios.post('http://localhost:3000/user/auth/register', {
             email: data.email,
             username: data.username,
             password: data.password

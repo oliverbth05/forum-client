@@ -31,9 +31,8 @@ const actions = {
     
     fetchEditUserProfile(context, user_id) {
         context.commit('init_edit_user_loading');
-        axios.get('https://ob-forum-api.herokuapp.com/user/' + user_id + '/data/profile')
+        axios.get('http://localhost:3000/user/' + user_id + '/data/profile')
         .then(response => {
-            console.log(response.data)
             context.commit('load_edit_userProfile', response.data)
             context.commit('finish_edit_user_loading')
         })

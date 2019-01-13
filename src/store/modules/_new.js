@@ -36,7 +36,7 @@ const actions = {
         
         context.commit('init_create_loading');
         
-        axios.post('https://ob-forum-api.herokuapp.com/posts', data)
+        axios.post('http://localhost:3000/posts', data)
         .then(response => {
             context.commit('createErrorReset')
             context.commit('finish_create_loading')
@@ -54,7 +54,6 @@ const actions = {
             else { 
                 context.commit('finish_create_loading')
                 context.commit('createErrorDidOccur', err.message)
-                console.log(err.message)
             }
          })
     }
@@ -66,3 +65,5 @@ export default {
     mutations,
     actions
 }
+
+//localhost:3000

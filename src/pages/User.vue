@@ -28,6 +28,7 @@
                     :author_id  = 'blog.author_id'
                     :image      = 'blog.image || null'
                     :voteCount  = 'blog.voteCount'
+                    :views      = 'blog.views'
                 ></card>
                 </div>
                 <p v-if = 'userProfile.posts.length === 0'>No recent posts</p>

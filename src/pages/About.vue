@@ -29,11 +29,6 @@
                     </div>
                 </div>
                 
-                <!-- <div class = 'feature-description'>
-                    <p v-if = 'activeFeature === 1'>Create and post written content on any topic and in any form of your choosing.</p>
-                    <p v-if = 'activeFeature === 2'>Register with a secure account to create and interact with content.</p>
-                    <p v-if = 'activeFeature === 3'>Receive feedback on your content in the form of comments and votes.</p>
-                </div> -->
             </div>
         </div>
         
@@ -62,7 +57,19 @@
         </div>
         
         <div class = 'full-section bg-4'>
-            <h1 class = 'font-light color-white text-center'>GitHub</h1>
+            <div class = 'p-a-2'>
+                <h1 class = 'font-light color-white text-center'><i class="fab fa-github"></i> GitHub</h1>
+                <div class = 'm-t-3 content-centered'>
+                    <a class = 'button-small button-orange' target = '_blank' href = 'https://github.com/oliverbth05/forum-api'><i class="fas fa-arrow-circle-right"></i> Forum API Repository</a>
+                </div>
+
+                <div class = 'm-t-1 content-centered'>
+                    <a class = 'button-small button-orange' target = '_blank' href = 'https://github.com/oliverbth05/forum-client'><i class="fas fa-arrow-circle-right"></i> Forum Client Repository</a>
+                </div>
+                
+            </div>
+            
+        
         </div>
         
     </div>
@@ -86,7 +93,6 @@
         methods: {
           scroll(e){
              if (window.pageYOffset > 1600) {
-                 console.log(window.pageYOffset)
                  this.showAnimation = true
              }
           },

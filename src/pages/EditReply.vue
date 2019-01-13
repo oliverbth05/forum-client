@@ -61,7 +61,6 @@
         },
         
         updated() {
-            console.log(this.edit_reply)
             if(!this.hasLoaded && !this.body) {
                 this.body = this.edit_reply.replies[0].body
                 this.hasLoaded = true

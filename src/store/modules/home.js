@@ -63,8 +63,9 @@ const mutations = {
         ]
         state.homePosts = updated
     },
-    home_errorHasOccurred(state, error) {
-        state.homeError = error
+    home_errorHasOccurred(state) {
+        state.homeError = 'Error while loading posts.',
+        state.morePostsLoading = false
     },
     home_loadSuccess(state) {
         state.homeError = null
@@ -99,7 +100,7 @@ const actions = {
     fetchHomePosts(context, params) {
         context.commit('changeHomeSort', params.sort)
         context.commit('init_postsLoading');
-        axios.get('https://ob-forum-api.herokuapp.com/posts?sort=' + params.sort + '&page=' + params.page)
+        axios.get('http://localhost:3000/posts?sort=' + params.sort + '&page=' + params.page)
         .then(response => {
             context.commit('resetList')
             context.commit('loadHomePosts', response.data)
@@ -107,14 +108,13 @@ const actions = {
             context.commit('finish_postsLoading')
         })
         .catch(err => {
-            console.log(err)
-            context.commit('home_errorHasOccurred', err.message)
+            context.commit('home_errorHasOccurred')
             context.commit('finish_postsLoading')
         })
     },
     fetchMoreHomePosts(context, params) {
         context.commit('init_morePostsLoading')
-        axios.get('https://ob-forum-api.herokuapp.com/posts?sort=' + params.sort + '&page=' + params.page)
+        axios.get('http://localhost:3000/posts?sort=' + params.sort + '&page=' + params.page)
         .then(response => {
             if (response.data.length > 0) {
                 context.commit('loadHomePosts', response.data)
@@ -124,6 +124,10 @@ const actions = {
                 context.commit('finish_morePostsLoading');
                 context.commit('listEnded')
             }
+        })
+        .catch(err => {
+            context.commit('home_errorHasOccurred')
+            context.commit('finish_postsLoading')
         })
     }
 }

@@ -7,7 +7,7 @@
         <div class = 'card__info'>
         
           
-                 <p>{{author}}<p> <span class = 'space-right'></span> <p>{{moment}}</p> <span class = 'space-right'></span> <p><i class="far fa-arrow-alt-circle-up"></i> {{voteCount}}</p> <span class="space-right"></span><p><i class="far fa-eye"></i> 0</p>
+                 <p>{{author}}<p> <span class = 'space-right'></span> <p>{{moment}}</p> <span class = 'space-right'></span> <p><i class="far fa-arrow-alt-circle-up"></i> {{voteCount}}</p> <span class="space-right"></span><p><i class="far fa-eye"></i> {{views}}</p>
            
 
            
@@ -37,7 +37,8 @@
             'author',
             'author_id',
             'voteCount',
-            'image'
+            'image',
+            'views'
         ],
         
         computed: {

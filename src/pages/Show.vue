@@ -3,7 +3,8 @@
         <div class = 'loading-container' v-if = 'post_loading'>
             <loader></loader>
         </div>
-        <div v-else class = 'fadeIn box bg-white m-t-2'> 
+        <alert v-if = '!post_loading && load_post_error' :show = 'load_post_error' :message = 'load_post_error'></alert>
+        <div v-if = '!post_loading && !load_post_error' class = 'fadeIn box bg-white m-t-2'> 
             <div class = 'show__top-pane p-r-1 p-l-1 p-t-1 p-b-1'>
                 <div class = 'show__author-info'>
                     <div class = 'user__avatar-small'>
@@ -41,6 +42,7 @@
                 v-if  = 'post.body' 
                 >{{post.body}}</p>
                 <router-link v-if = 'canEdit' class = 'button-small button-orange m-t-2' :to = "'/edit/post/' + post._id"><i class="far fa-edit"></i> Edit Post </router-link>
+                <p class = 'm-t-1'>{{post.views}} <i class="far fa-eye"></i> </p>
             </div>
            
                 
@@ -51,13 +53,15 @@
         <div class = 'loading-container' v-if = 'comments_loading'>
             <loader></loader>
         </div>
+        
         <div v-if = '!comments_loading' class = 'fadeIn'>
-            <div v-if = 'user' class = 'p-a-1 m-t-2 box bg-white'>
+            <div v-if = 'user && !load_comments_error' class = 'p-a-1 m-t-2 box bg-white'>
+                <alert :show = 'post_comment_error' :message = 'post_comment_error'></alert>
                 <form  @submit.prevent = 'submitComment' >
                     <label>Post comment</label>
                     <textarea class = 'text-area m-b-s'
                     v-model = 'commentField'
-                    />
+                    required />
                     <button
                     :disabled = "comments_loading ? true : false"
                     class = 'button-block button-orange'
@@ -66,8 +70,10 @@
                 </form>
             </div>
             <br />
+            <alert v-if = '!comments_loading && load_comments_error' :message = 'load_comments_error' :show = 'load_comments_error'></alert>
             <div v-if = 'comments' class = 'm-t-1'>
                 <h4 class = 'p-b-1'><i class="fas fa-comments"></i> Comments <span class = 'comment-count'>{{comments.length}}</span></h4>
+                
                 <comment 
                 v-for          = '(comment, index) in comments' 
                 :comment_index = 'index'
@@ -123,7 +129,10 @@
                 'user',
                 'token', 
                 'comments',
-                'editing_comment'
+                'editing_comment',
+                'post_comment_error',
+                'load_post_error',
+                'load_comments_error'
             ]),
             moment(){
                 return moment(this.post.date).fromNow()
@@ -180,7 +189,6 @@
                 this.fetchComments(this.$route.params.id)
             },
             goBack() {
-                console.log(this.$router.history)
                 this.$router.go(-1);
             }
         },

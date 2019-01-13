@@ -70,7 +70,6 @@
         },
         
         updated(){
-            console.log(this.edit_comment)
             if(!this.hasLoaded && !this.body) {
                 this.body = this.edit_comment.body
                 this.hasLoaded = true

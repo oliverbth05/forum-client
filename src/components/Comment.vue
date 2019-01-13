@@ -48,7 +48,7 @@
                 post_id: post_id,
                 token: token
                 })'>
-                <textarea class = 'input-block m-b-s' v-model = 'replyBody'/>
+                <textarea class = 'input-block m-b-s' v-model = 'replyBody' required/>
                 <button class = 'button-small button-orange' type = 'submit'>Post</button>
                 <button class = 'button-small button-orange' @click = 'hideReplyForm'>Cancel</button>
         </form>
