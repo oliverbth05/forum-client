@@ -1,13 +1,3 @@
-.header-massive {
-    font-weight: lighter;
-    display: block;
-    text-align: center;
-    text-transform: uppercase;
-    color: white;
-    animation: header-fade;
-    animation-duration: .5s;
-    animation-iteration-count: 1;
-}
 
 .call2action {
     transition: background .2s;
@@ -29,14 +19,7 @@
     
 }
 
-.text {
-    max-width: 1200px;
-    padding: 20px;
-    color: white;
-    font-weight: lighter;
-    line-height: 30px;
-    text-align: justify;
-}
+
 
 .full-section {
     min-height: 1000px;
@@ -50,27 +33,33 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
     align-items: center;
+ 
     justify-content: center;
+
+    @include respond(tablet) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond(phone) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .feature {
     transition: background .2s;
     background: rgba(255, 255, 255, 0.6);
-    border-radius: 2px 2px 0 0;
-    padding: 30px;
+    border-radius: 4px;
+    padding: 4rem;
     text-align: center;
     cursor: pointer;
     
     i {
-    
+        font-size: 2.5rem;
         padding: 30px;
     }
-    
-    p {
-     
-        padding: 20px 0 20px 0;
-    }
+
     
     &:hover {
         background: white;
@@ -109,14 +98,21 @@
     justify-items: center;
     grid-gap: 10px;
     width: 100%;
-    
-    
+
+    @include respond(tablet) {
+        grid-template-columns: repeat(2, 1fr)
+    }
+    @include respond(phone) {
+        grid-template-columns: repeat(1, 1fr)
+    }
     
     &__el {
+        padding: 2rem;
+        font-size: 1rem;
+        font-family: inherit;
         border-radius: 2px;
         background: rgba(255, 255, 255, 0.6);
         width: 100%;
-        height: 300px;
         text-align: center;
         text-transform: uppercase;
         font-weight: lighter;
@@ -128,6 +124,8 @@
         }
         
         i {
+            font-size: 2.4rem;
+            padding: 1rem;
             display: block;
             text-align: center;
         }
@@ -142,12 +140,15 @@
     grid-gap: 10px;
     grid-template-columns: repeat(3, 1fr);
     
+    @include respond(phone) {
+        grid-template-columns: repeat(2, 1fr)
+    }
  
     
     div {
         background: rgba(255, 255, 255, 0.6);
         text-transform: uppercase;
-       
+        padding: .9rem;
         text-align: center;
         border-radius: 2px;
         font-weight: lighter;
@@ -242,7 +243,7 @@
 }
 
 .bg-1 {
-    background: linear-gradient(black, $color2);
+    background: linear-gradient($color1, $color2);
 }
 
 .bg-2 {
@@ -254,7 +255,7 @@
 }
 
 .bg-4 {
-    background: linear-gradient(#6e5494, black);
+    background: linear-gradient(#6e5494, $color1);
 }
 .hide {
     opacity: 0;

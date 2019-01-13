@@ -1,31 +1,31 @@
 .card {
     transition: all .2s;
-    display: flex;
-    justify-content: space-between;
     cursor: pointer;
     border-radius: 2px;
     background: rgba(255, 255, 255, 0.7);
-    margin-bottom: .5rem;
+    margin-bottom: .7rem;
+
+
     &:hover {
         background: white;
     }
-    
-    &__title {
-        display: block;
-        color: $color1;
-        padding-bottom: .4rem;
-    }
-    
-    &__date {
-        display: block;
 
+    &__title {
+        padding: 1.4rem 1rem 1.4rem 1rem;
     }
     
-    &__author {
-        display: inline-block;
-        text-decoration: none;
-      
+    &__info {
+        border-top: 1px solid rgb(230, 230, 230);
+        padding: .2rem 1rem .2rem 1rem;
+        
+
+            p {
+                display: inline-block;
+                color: $body-light;
+            }
+        
     }
+    
 
     
     &__vote {

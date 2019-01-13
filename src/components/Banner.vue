@@ -11,7 +11,7 @@ export default {
 
     data() {
         return {
-            showBanner: true
+            banner: true
         }
     },
 
@@ -21,15 +21,15 @@ export default {
 
     methods: {
         showBanner() {
-            this.showBanner = true
+            this.banner = true
         },
         hideBanner() {
-            this.showBanner = false
+            this.banner = false
         }
     },
 
     created() {
-        this.showBanner = true;
+        this.banner = true;
         setTimeout(() => {
             this.hideBanner()
         }, 2000)

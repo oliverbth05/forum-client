@@ -24,7 +24,8 @@
                     :voteCount  = 'blog.voteCount'
                 ></card>
             </div>
-        <button class = 'button-block button-orange' v-if = '!endOfList && !homeError' :loading = 'morePostsLoading ? true : false' @click = 'fetchMoreHomePosts({sort: homePostsSort, page: currentPage })'>Show More Posts</button>      
+            <loader-button v-if = '!endOfList && !homeError && !postsLoading' :loading = 'morePostsLoading ? true : false'></loader-button>
+        <!-- <button class = 'button-block button-orange' >Show More Posts</button>       -->
         <p class = 'end-of-list' v-if = 'endOfList'>End of list.</p>
     </div>
 </template>
@@ -32,6 +33,7 @@
 <script>
     import { mapGetters, mapActions, mapMutations } from 'vuex';
     import Loader from '../components/Loader.vue';
+    import LoaderButton from '../components/LoaderButton.vue';
     import Card from '../components/Card.vue';
     import Alert from '../components/Alert.vue';
     export default {
@@ -39,7 +41,8 @@
         components: {
             'card' : Card,
             'alert' : Alert,
-            'loader' : Loader
+            'loader' : Loader,
+            'loader-button': LoaderButton
         },
         
         computed:  {

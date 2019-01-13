@@ -24,6 +24,7 @@
     }
     
     &__content {
+        border-bottom: 1px solid rgb(210, 210, 210);
         img {
             @include box;
             display: block;

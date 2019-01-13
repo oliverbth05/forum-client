@@ -1,6 +1,4 @@
 
-$shadow: 0px 2px 3px 0px rgba(0,0,0,0.47);
-
 /* RGB */ 
 $color1: rgba(41, 47, 54, 1);
 // $color2: rgba(78, 205, 196, 1);
@@ -9,7 +7,7 @@ $color2-light: #FF9E8B;
 $color2-lighter: #FFB8AA;
 $color2-dark: rgb(214, 120, 32);
 $color3: rgba(247, 255, 247, 1);
-$color4: #90323D;
+$color4: #ED4242;
 $color4-dark: rgba(225, 77, 77, 1);
 $color5: rgba(255, 230, 109, 1);
 
@@ -20,8 +18,14 @@ $grey-4: rgb(230, 230, 230);
  
 $heading: #2D3144;
 $body: #424657;
+
+$body-light: #757884; 
  
- 
+
+$shadow: 0px 2px 3px 0px rgba(0,0,0,0.47);
+
+$shadow-input-after: 0px 0px 0px 3px $color2-lighter;
+$shadow-input-before: 0px 0px 0px 0px $color2-lighter;
 body {
     // background: linear-gradient(to right, $color2, #E6C79C)    
     background: #F4F2F3;

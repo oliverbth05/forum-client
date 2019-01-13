@@ -10,7 +10,7 @@
                 class = 'nav__title color-white'
                 active-class = 'title-active'
                 tag = 'h3'
-                >Forum</router-link>
+                ><i class="fas fa-home"></i> Forum</router-link>
                 
                 <div class = 'nav__links'>
     
@@ -81,8 +81,9 @@
                         active-class = 'mobile-active'
                         to = '/home'
                         >
-                            <i class="fas fa-home"></i>
+                            
                             <p>Home</p>
+                            <i class="fas fa-home"></i>
                         </router-link>
             
                     <div v-if = 'user'>
@@ -93,8 +94,9 @@
                         active-class = 'mobile-active'
                         :to = '/user/ + user._id'
                         >
-                            <i class="fas fa-user"></i> 
+                            
                             <p>{{user.username}}</p>
+                            <i class="fas fa-user"></i> 
                         </router-link>
                     
                         <router-link 
@@ -103,8 +105,9 @@
                         active-class = 'mobile-active'
                         to              = '/new'
                         >
-                            <i class="fas fa-pen"></i>
+                          
                             <p>New Post</p>
+                            <i class="fas fa-pen"></i>
                         </router-link>
                     
                         
@@ -112,8 +115,9 @@
                         <a
                         @click = 'logOut'
                         class = 'nav__drawer-link'>
-                        <i class="fas fa-sign-out-alt"></i>
+                       
                         <p>Log Out</p>
+                         <i class="fas fa-sign-out-alt"></i>
                         </a>
                     
                     </div>
@@ -124,8 +128,9 @@
                     active-class = 'mobile-active'
                     to = '/login'
                     >
-                        <i class="fas fa-sign-in-alt"></i>
+                     
                         <p>Log In</p>
+                           <i class="fas fa-sign-in-alt"></i>
                     </router-link>
                     
                     <router-link 
@@ -134,8 +139,9 @@
                     active-class = 'mobile-active'
                     to = '/register'
                     >
-                    <i class="fas fa-user-plus"></i>
+                   
                     <p>Register</p>
+                     <i class="fas fa-user-plus"></i>
                     </router-link>
                     </div>
                     
@@ -145,8 +151,9 @@
                         active-class = 'mobile-active'
                         @click = 'toggleDrawer'
                         to              = '/'>
-                            <i class="fas fa-info-circle"></i>
+                            
                             <p>About</p>
+                            <i class="fas fa-info-circle"></i>
                         </router-link>
                 </div>
                     

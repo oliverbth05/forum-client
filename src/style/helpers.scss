@@ -22,6 +22,10 @@
   color: white;
 }
 
+.color-orange {
+  color: $color2
+}
+
 .font-normal {
   font-weight: normal;
 }
@@ -181,7 +185,13 @@ Padding
   padding-bottom: 0 !important;
 }
 
+.p-a-xs {
+  padding: .3rem
+}
 
+.p-a-s {
+  padding: .5rem;
+}
 
 .p-a-1 {
   padding: 1rem 1rem !important;

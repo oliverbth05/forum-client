@@ -1,16 +1,28 @@
 <template>
-    <router-link tag = 'div' :to = '"/show/" + id' class = 'card p-a-1 box'>
-        <div class = 'card__info'>
-            <h4 class = 'card__title font-normal'><i v-if = 'image' class="far fa-image"></i>{{ title}}</h4>
-            <p>{{author}}</p>
-            <p class = ''>{{moment}}</p>
+    <router-link tag = 'div' :to = '"/show/" + id' class = 'card box'>
+        <div class = 'card__title'>
+            <h4 class = 'font-normal'><i v-if = 'image' class="far fa-image"></i> {{title}}</h4>
         </div>
-        <div class = 'card__vote'>
+
+        <div class = 'card__info'>
+        
+          
+                 <p>{{author}}<p> <span class = 'space-right'></span> <p>{{moment}}</p> <span class = 'space-right'></span> <p><i class="far fa-arrow-alt-circle-up"></i> {{voteCount}}</p> <span class="space-right"></span><p><i class="far fa-eye"></i> 0</p>
+           
+
+           
+                
+            
+
+        </div>
+        
+        
+        <!-- <div class = 'card__vote'>
             <div>
-                <i class="far fa-arrow-alt-circle-up"></i>
+                
                 <p>{{voteCount}}</p>
             </div>
-        </div>
+        </div> -->
     </router-link>
 </template>
 

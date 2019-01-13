@@ -2,16 +2,19 @@
 
    
     &__avatar {
-      
+        font-size: 42px;
+        padding: 28px;
         background: black;
         color: white;
         display: block;
         border-radius: 50%;
-        height: 150px;
-        width: 150px;
+        height: 100px;
+        width: 100px;
         margin: auto;
+        margin-bottom: 20px;
+        box-shadow: $shadow;
     }
-    
+     
     &__avatar-small {
         margin-right: 8px;
         height: 40px;

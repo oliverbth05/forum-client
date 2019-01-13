@@ -14,7 +14,7 @@
                         <label>Password</label>
                         <input class = 'input-block m-b-1'   type = 'password' required v-model = 'password'/>
                         <button class = 'button-block button-orange m-b-1' type = 'submit'>Submit</button>
-                        <router-link class = 'form__link' to = '/register'>Create an account</router-link>
+                        <router-link class = 'color-orange' to = '/register'>Create an account</router-link>
                     </form>
             </div>
     </div>

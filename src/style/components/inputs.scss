@@ -1,12 +1,15 @@
 
 @mixin inputStyle {
     padding: .6rem;
-    border: 1.4px solid $grey-2;
-    transition: border-color .2s;
-    
+    border: 1.2px solid $grey-3;
+    transition: border-color, box-shadow .3s;
+    box-shadow: $shadow-input-before;
+    border-radius: 5px;
+
     &:focus {
         outline: none;
         border-color: $color2;
+        box-shadow: $shadow-input-after
     }
 }
 
@@ -14,5 +17,12 @@
     @include inputStyle;
     display: block;
     width: 100%;
-    border-radius: 5px;
+}
+
+.text-area {
+    @include inputStyle;
+    white-space: pre-wrap;
+    min-height: 7rem;
+    display: block;
+    width: 100%;
 }

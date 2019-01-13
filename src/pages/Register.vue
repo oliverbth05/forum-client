@@ -24,7 +24,7 @@
                       
                         <button type = 'submit' class = 'button-block button-orange m-b-1'>Submit</button>
                       
-                        <router-link class = 'form__link' to = '/login'>Already have an account?</router-link>
+                        <router-link class = 'color-orange' to = '/login'>Already have an account?</router-link>
                     </form>
             </div>
     </div>

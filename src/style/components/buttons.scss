@@ -17,7 +17,7 @@
 }
 
 .button-orange {
-    border: 1.4px solid $color2;
+    border: 1.2px solid $color2;
     color: $color2;
      &:hover {
         background: $color2;
@@ -26,7 +26,7 @@
 }
 
 .button-red {
-    border: 1.4px solid $color4;
+    border: 1.2px solid $color4;
     color: $color4;
      &:hover {
         background: $color4;
@@ -35,7 +35,7 @@
 }
 
 .button-white {
-    border: 1.4px solid rgba(255, 255, 255, 0.7);
+    border: 1.2px solid rgba(255, 255, 255, 0.7);
     background: $color2;
     
     &:hover {
@@ -55,4 +55,23 @@
     display: inline-block;
     
     
+}
+
+
+.loader-button {
+    @include buttonStyle;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: 1fr 3fr 1fr;
+
+    p {
+        color: $color2
+    }
+    
+    &:hover {
+        p {
+            color: white
+        }
+    }
 }

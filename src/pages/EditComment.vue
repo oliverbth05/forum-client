@@ -5,7 +5,7 @@
         </loader>
     </div>
     
-    <div class = 'container-content-centered' v-else>
+    <div class = 'container-content-centered fadeIn' v-else>
         <div class = 'container-600 p-a-1'>
             <form @submit.prevent = 'submitUpdate'>
                 <h3 class = 'text-center font-normal p-b-2'>Edit Comment</h3>

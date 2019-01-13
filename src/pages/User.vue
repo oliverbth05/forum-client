@@ -1,32 +1,22 @@
 <template>
     <div v-if = 'loading' class = 'container-content-centered'>
-        <v-progress-circular
-        :size="70"
-        :width="4"
-        color="rgb(255, 255, 255)"
-        indeterminate
-        ></v-progress-circular>
-    </div>
-    
-    <div class = 'container-1200' v-else-if = 'userProfileError'>
-        <v-alert type = 'error' color = 'rgba(239, 100, 97, 1)' :value = 'userProfileError' transition = 'fade-transition' >{{userProfileError}}</v-alert>
-    </div>
-        
-    <div class = 'container-1200 ' v-else>
+       <loader></loader>   
+    </div> 
+
+    <div class = 'container-1200 fadeIn p-a-3 m-t-3' v-else>
             <div class = 'user'>
                 <div class = 'user__avatar'>
                     <i class="fas fa-user-alt"></i>
                 </div>
-                <h1 class = 'display-1 center'>{{userProfile.user.username}} 
-                </h1>
+                <h3 class = 'font-normal text-center'>{{userProfile.user.username}}</h3>
                 <br />
                 <br />
-                <p class = 'center'>Member since {{moment}}</p>
+                <p class = 'center'>Member since {{createdMoment}}</p>
                 <p class = 'center'>Has posted {{userProfile.posts.length}} times </p>
             </div> 
             
-            <div>
-                <h2>Recent Posts</h2>
+            <div class = 'm-t-3'>
+                <h4 class = 'm-b-1'>Recent Posts</h4>
                 <div>
                   <card 
                     v-for       = 'blog in userProfile.posts'
@@ -48,16 +38,18 @@
 <script>
     import moment from 'moment';
     import Card from '../components/Card.vue';
+    import Loader from '../components/Loader';
     import { mapGetters, mapActions, mapMutations } from 'vuex';
 
     export default {
         components: {
-          'card': Card
+          'card': Card,
+          'loader': Loader
         },
         computed: {
             ...mapGetters(['userProfile', 'loading', 'user', 'userProfileError']),
-            moment() {
-              return new moment(this.userProfile.createdAt).format('MM/DD/YYYY')  
+            createdMoment() {
+              return moment(this.userProfile.createdAt).format('MM/DD/YYYY')  
             },
             isUser() {
                 if (this.user) {

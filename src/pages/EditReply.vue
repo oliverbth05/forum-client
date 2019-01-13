@@ -4,7 +4,7 @@
         <loader></loader>
     </div>
     
-    <div class = 'container-content-centered p-a-1' v-else>
+    <div class = 'container-content-centered p-a-1 fadeIn' v-else>
         <div class = 'container-600'>
             <form @submit.prevent = 'submitEdit' class = 'form'>
                 <h3 class = 'text-center p-b-2 font-normal'>Edit Reply</h3>

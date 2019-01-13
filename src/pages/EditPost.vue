@@ -1,48 +1,43 @@
 <template>
     <div  v-if = 'edit_loading' class = 'container-content-centered'>
-        <v-progress-circular
-        :size="70" 
-        :width="4"
-        color="rgb(239, 134, 35)"
-        indeterminate
-        ></v-progress-circular>
+        <loader></loader>
     </div> 
     
-    <div v-else class = 'container-1200'>
-        <form class = 'form'
-        @submit.prevent = 'updateEditPost({
-        title: post_data.title,
-        body: post_data.body,
-        image: post_data.image,
-        post_id: post_data._id,
-        token: token
-        })' 
-        > 
-            <h1 class = 'center'>Edit Post</h1>
-            <label class = 'label'>Title</label>
-            <input v-model = 'post_data.title' class = 'input' required/>
-            <br />
-            <br />
-            <label class = 'label'>Body</label>
-            <textarea class = 'textarea-large' v-model = 'post_data.body' />
-            <br />
-            <br />
-            <label class = 'label'>Image URL</label>
-            <br />
-            <input class= 'input' v-model = 'post_data.image' type = 'text'>
-            <br />
-            <br />
-            <button class = 'button-inline btn-orange' type = 'submit' ><i class="far fa-save"></i> Update</button>
-            <button @click = 'cancelEdit' class = 'button-inline btn-orange'><i class="far fa-times-circle"></i> Cancel</button>
-            <button @click = 'deletePost({post_id: post_data._id, token: token})' class = 'button-inline btn-red'><i class="far fa-trash-alt"></i> Delete Post</button>
-        </form>
-        <br />
+    <div v-else class = 'container-content-centered fadeIn'>
+        <div class = 'container-600'>
+            <form
+            @submit.prevent = 'updateEditPost({
+            title: post_data.title,
+            body: post_data.body,
+            image: post_data.image,
+            post_id: post_data._id,
+            token: token
+            })' 
+            > 
+                <h3 class = 'text-center font-normal m-b-2'>Edit Post</h3>
+                <label>Title</label>
+                <input v-model = 'post_data.title' class = 'input-block m-b-1' required/>
+                <label>Body</label>
+                <textarea class = 'text-area m-b-1' v-model = 'post_data.body' />
+                <label>Image URL</label>
+                <input class= 'input-block m-b-1' v-model = 'post_data.image' type = 'text'>
+                <button class = 'button-small button-orange' type = 'submit' ><i class="far fa-save"></i> Update</button>
+                <button @click = 'cancelEdit' class = 'button-small button-orange'><i class="far fa-times-circle"></i> Cancel</button>
+                <button @click = 'deletePost({post_id: post_data._id, token: token})' class = 'button-small button-red'><i class="far fa-trash-alt"></i> Delete Post</button>
+            </form>
+        </div>
+
     </div>
 </template>
 
 <script> 
     import { mapGetters, mapActions } from 'vuex';
+    import Loader from '../components/Loader';
+
     export default {
+        components: {
+            'loader': Loader
+        },
         data() {
             return {
                 post_data: null, // Contains the updated data

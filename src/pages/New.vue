@@ -19,7 +19,7 @@
                 <label>Title</label>
                 <input v-model = 'title' required class = 'input-block m-b-s' />
                 <label>Body</label>
-                <textarea v-model = 'body' class = 'input-block  m-b-s'/>
+                <textarea v-model = 'body' class = 'text-area  m-b-s'/>
                 <label>Image Link (Optional)</label>
                 <input class = 'input-block m-b-s' v-model = 'image'/>
                 <button class = 'button-block button-orange' type = 'submit'>Create</button>

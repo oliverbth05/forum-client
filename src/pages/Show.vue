@@ -1,12 +1,10 @@
 <template> 
     <div class = 'container-1200 '>
-        <br />
         <div class = 'loading-container' v-if = 'post_loading'>
             <loader></loader>
         </div>
-        <div  v-else class = 'fadeIn'> 
-            <!--<button @click = 'goBack' class ='button-inline btn-orange'><i class="fas fa-arrow-left"></i> Go Back</button>-->
-            <div class = 'show__top-pane p-a-1'>
+        <div v-else class = 'fadeIn box bg-white m-t-2'> 
+            <div class = 'show__top-pane p-r-1 p-l-1 p-t-1 p-b-1'>
                 <div class = 'show__author-info'>
                     <div class = 'user__avatar-small'>
                         <i class="fas fa-user-alt"></i>
@@ -32,7 +30,7 @@
                     v-if = 'userCanVote' class   = "fas fa-arrow-circle-up post-not-voted"></i>
                 </div>
             </div>  
-            <div class = 'show__content p-a-1'>
+            <div class = 'show__content p-a-1 '>
                 <h3 class = 'p-b-1'>{{post.title}}</h3>
                 <img
                 v-if  = 'post.image' 
@@ -42,11 +40,11 @@
                 class = 'show__body'
                 v-if  = 'post.body' 
                 >{{post.body}}</p>
+                <router-link v-if = 'canEdit' class = 'button-small button-orange m-t-2' :to = "'/edit/post/' + post._id"><i class="far fa-edit"></i> Edit Post </router-link>
+            </div>
+           
                 
-            </div>
-            <div class = 'p-a-1' v-if = 'canEdit'>
-                <router-link :to = "'/edit/post/' + post._id"><i class="far fa-edit"></i> Edit Post </router-link>
-            </div>
+            
         </div>
      
         
@@ -54,10 +52,10 @@
             <loader></loader>
         </div>
         <div v-if = '!comments_loading' class = 'fadeIn'>
-            <div v-if = 'user' class = 'p-a-1 m-t-2'>
+            <div v-if = 'user' class = 'p-a-1 m-t-2 box bg-white'>
                 <form  @submit.prevent = 'submitComment' >
                     <label>Post comment</label>
-                    <textarea class = 'input-block m-b-s'
+                    <textarea class = 'text-area m-b-s'
                     v-model = 'commentField'
                     />
                     <button
@@ -68,7 +66,7 @@
                 </form>
             </div>
             <br />
-            <div v-if = 'comments' class = 'p-a-1'>
+            <div v-if = 'comments' class = 'm-t-1'>
                 <h4 class = 'p-b-1'><i class="fas fa-comments"></i> Comments <span class = 'comment-count'>{{comments.length}}</span></h4>
                 <comment 
                 v-for          = '(comment, index) in comments' 

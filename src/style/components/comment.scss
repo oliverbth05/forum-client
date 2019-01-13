@@ -1,56 +1,50 @@
-.comment {
-    display: grid;
-    grid-template-columns: 2fr 25fr 4fr;
-    grid-template-rows: 1fr;
-    align-items: center;
+.comment__container {
     @include box;
+    margin-bottom: .3rem;
     background: white;
-    padding: .6rem;
-    margin-bottom: .6rem;
+    padding: 1rem;
+}
+
+
+.comment {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
     
-    &__avatar {
-        background: black;
-        color: white;
-        border-radius: 50%;
-        height: 30px;
-        width: 30px;
-        align-self: center;
-        justify-self: center;
-        padding: 7px;
-        
-    }
-    
-    &__date, &__author {
-        display: inline-block;
-        padding: .2rem;
-        font-size: .9rem;
-    }
-    
-    &__body {
-        padding: .2rem;    
-    }
-    
-    &__options {
-        padding: .2rem;
-        
-        a {
-            @include hoverOrange;
-            cursor: pointer;
-            text-decoration: none;
-            padding-right: .4rem;
-            font-size: .9rem;
-        }
-    }
-    
+
     &__vote {
         display: flex;
         align-items: center;
-        justify-content: center;
-        
+        p, i {
+            padding: .2rem;
+        };
+    }
 
+    &__author {
+        p, a {
+            display: inline-block;
+            color: $body-light;
+        }
+    }
 
+    &__options {
+      margin-top: .2rem;
+      
+      a {
+          cursor: pointer;
+          &:hover {
+              color: $color2
+          }
+      }
+    }
+
+    &__form {
+        border-top: 1px solid rgb(230, 230, 230)
     }
 }
+
+
 
 .comment-voted {
     color: $color2;
