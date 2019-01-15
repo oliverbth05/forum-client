@@ -29,3 +29,7 @@ package.json
 
  devServer: {
  public: "frontend-templates-oliverbth05.c9users.io",
+
+in Index.html
+
+--change script src to = '/dist/build.js
