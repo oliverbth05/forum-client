@@ -114,7 +114,7 @@ const mutations = {
 const actions = {
     fetchPost(context, id) {
         context.commit('init_post_loading')
-        axios.get('https://ob-forum-client.herokuapp.com/posts/' + id)
+        axios.get('https://ob-forum-api.herokuapp.com/posts/' + id)
         .then(response => {
             context.commit('loadPost', response.data);
             context.commit('finish_post_loading')
@@ -127,7 +127,7 @@ const actions = {
     },
     fetchComments(context, post_id) {
         context.commit('init_comments_loading')
-        axios.get('https://ob-forum-client.herokuapp.com/posts/' + post_id + '/comments')
+        axios.get('https://ob-forum-api.herokuapp.com/posts/' + post_id + '/comments')
         .then(response => {
             context.commit('loadComments', response.data)
             context.commit('finish_comments_loading')
@@ -141,7 +141,7 @@ const actions = {
     },
     postComment(context, data) {
         context.commit('init_comments_loading')
-        axios.post('https://ob-forum-client.herokuapp.com/posts/' + data.post_id + '/comments', data)
+        axios.post('https://ob-forum-api.herokuapp.com/posts/' + data.post_id + '/comments', data)
         .then(response => {
             context.commit('postComment', response.data)
             context.commit('finish_comments_loading')
@@ -153,7 +153,7 @@ const actions = {
     },
     postReply(context, data) { //******FIX
         context.commit('init_comments_loading')
-        axios.post('https://ob-forum-client.herokuapp.com/posts/' + data.post_id + '/comments/' + data.comment_id + '/replies', data)
+        axios.post('https://ob-forum-api.herokuapp.com/posts/' + data.post_id + '/comments/' + data.comment_id + '/replies', data)
         .then(response => {
             context.commit('loadComments', response.data)
         })
@@ -161,7 +161,7 @@ const actions = {
     deleteReply(context, data) {
         console.log(data)
         context.commit('init_comments_loading');
-        axios.delete('https://ob-forum-client.herokuapp.com/comment/' + data.comment_id + '/reply/' + data.reply_id + '/' + data.token)
+        axios.delete('https://ob-forum-api.herokuapp.com/comment/' + data.comment_id + '/reply/' + data.reply_id + '/' + data.token)
         .then(response => {
             context.commit('finish_comments_loading');
             context.commit('deleteReply', {comment_index: data.comment_index, reply_index: data.reply_index})

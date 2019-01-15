@@ -76,7 +76,7 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
-    public: "localhost:4000",
+    public: "frontend-templates-oliverbth05.c9users.io",
     historyApiFallback: true,
     noInfo: true,
     overlay: true
