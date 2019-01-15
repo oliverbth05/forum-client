@@ -1,0 +1,57 @@
+.tag {
+    color: white;
+    display: flex;
+    margin: .5rem;
+    border: 1px solid $color2;
+    
+    &__content {
+        
+        p {
+            color: $color2;
+        }
+        
+        padding: .5rem;
+        border-radius: 5px 0px 0px 5px;
+    }
+    
+    &__delete {
+        transition: all .2s;
+        cursor: pointer;
+        background: $color2;
+        padding: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+        i {
+            color: white;
+            font-size: 1.2rem;
+        }
+       
+        &:hover {
+            background: red;
+           
+            i {
+                color: white;
+            }
+        }
+    }
+    
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        list-style-type: none;
+        margin-bottom: .5rem;
+    }
+    
+    
+}
+
+.tag-normal {
+    color: $color2;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: .5rem;
+}

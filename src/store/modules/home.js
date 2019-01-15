@@ -102,6 +102,7 @@ const actions = {
         context.commit('init_postsLoading');
         axios.get('https://ob-forum-api.herokuapp.com/posts?sort=' + params.sort + '&page=' + params.page)
         .then(response => {
+            console.log(response.data)
             context.commit('resetList')
             context.commit('loadHomePosts', response.data)
             context.commit('home_loadSuccess')
@@ -116,6 +117,7 @@ const actions = {
         context.commit('init_morePostsLoading')
         axios.get('https://ob-forum-api.herokuapp.com/posts?sort=' + params.sort + '&page=' + params.page)
         .then(response => {
+            console.log(response.data)
             if (response.data.length > 0) {
                 context.commit('loadHomePosts', response.data)
                 context.commit('finish_morePostsLoading')

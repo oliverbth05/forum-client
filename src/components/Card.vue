@@ -38,7 +38,8 @@
             'author_id',
             'voteCount',
             'image',
-            'views'
+            'views',
+            'tags'
         ],
         
         computed: {

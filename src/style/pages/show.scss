@@ -3,7 +3,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid rgba(210, 210, 210, 1);
+   
     }
     
      &__author-info {
@@ -24,7 +24,11 @@
     }
     
     &__content {
-        border-bottom: 1px solid rgb(210, 210, 210);
+        
+        p {
+            white-space: pre-wrap;    
+        }
+        
         img {
             @include box;
             display: block;
@@ -59,4 +63,21 @@
 
 .comment-count {
     color: $color2;
+}
+
+.post-tags {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    flex-wrap: wrap;
+    
+    p {
+        border: 1px solid $color2;
+        padding: .3rem;
+        color: $color2;
+        border-radius: 5px;
+        margin: .3rem;
+    }
+    
 }

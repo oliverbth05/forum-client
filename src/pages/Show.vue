@@ -42,7 +42,12 @@
                 v-if  = 'post.body' 
                 >{{post.body}}</p>
                 <router-link v-if = 'canEdit' class = 'button-small button-orange m-t-2' :to = "'/edit/post/' + post._id"><i class="far fa-edit"></i> Edit Post </router-link>
-                <p class = 'm-t-1'>{{post.views}} <i class="far fa-eye"></i> </p>
+            </div>
+            <div class = 'show__details p-a-1'>
+                <p>{{post.views}} <i class="far fa-eye"></i></p> 
+                <ul class = 'tag__container'>
+                    <li v-for = 'tag in post.tags' class = 'tag-normal'>{{tag}}</li>
+                </ul>
             </div>
            
                 
