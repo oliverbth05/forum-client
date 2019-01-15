@@ -2,40 +2,9 @@
     from {
         transform: rotate(0deg);
     }
-    
     to {
         transform: rotate(360deg);
     }
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .3s;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-
-.slide-enter-active, .slide-leave-active {
-    transition: all .1s;
-}
-
-.slide-enter, .slide-leave-to {
-    transform: translateX(-100%);
-}
-
-
-.Fade-enter-active, .Fade-leave-active {
-  transition-property: opacity;
-  transition-duration: .25s;
-}
-
-.Fade-enter-active {
-  transition-delay: .25s;
-}
-
-.Fade-enter, .Fade-leave-active {
-  opacity: 0
 }
 
 @keyframes fadeIn {
@@ -52,24 +21,96 @@
   0% {
     transform: translateY(60px)
   }
-
   15% {
     transform: translateY(0px)
   }
-
   85% {
     transform: translateY(0px);
   }
-
-
   100% {
     transform: translateY(60px)
   }
-
-
 }
 
 
+@keyframes fadeInGrow {
+    from {
+        transform: scale(.4);
+        opacity: 0;
+    }
+    
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .fadeIn {
     @include fadeInAnimation
+}
+
+.fade-interval-1 {
+    animation: fadeInGrow;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-2 {
+    animation: fadeInGrow;
+    animation-duration: .6s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-3 {
+    animation: fadeInGrow;
+    animation-duration: .7s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-4 {
+    animation: fadeInGrow;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-5 {
+    animation: fadeInGrow;
+    animation-duration: .9s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-6 {
+    animation: fadeInGrow;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-7 {
+    animation: fadeInGrow;
+    animation-duration: 1.1s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-8 {
+    animation: fadeInGrow;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-9 {
+    animation: fadeInGrow;
+    animation-duration: 1.3s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-10 {
+    animation: fadeInGrow;
+    animation-duration: 1.4s;
+    animation-iteration-count: 1;
+}
+
+.fade-interval-11 {
+    animation: fadeInGrow;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
 }

@@ -1,3 +1,10 @@
+.full-section {
+    min-height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container-content-centered {
     display: flex;
     height: 100vh;
@@ -16,6 +23,10 @@
     height: 40vh;
     align-items: center;
     justify-content: center;
+}
+
+.flex-container-responsive {
+    @include flex-container-responsive
 }
 
 .container-500 {

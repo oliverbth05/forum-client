@@ -1,4 +1,3 @@
-
 .call2action {
     transition: background .2s;
     max-width: 250px;
@@ -12,40 +11,11 @@
     background: transparent;
     margin: auto;
     border-radius: 2px;
-    
     &:hover {
         background: $color2;
     }
-    
 }
 
-
-
-.full-section {
-    min-height: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.features {
-    margin-top: 40px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    align-items: center;
- 
-    justify-content: center;
-
-    @include respond(tablet) {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @include respond(phone) {
-        grid-template-columns: 1fr;
-    }
-}
 
 .feature {
     transition: background .2s;
@@ -54,193 +24,63 @@
     padding: 4rem;
     text-align: center;
     cursor: pointer;
-    
+    margin: .5rem;
+    flex-grow: 1;
     i {
         font-size: 2.5rem;
-        padding: 30px;
+        padding: 3rem;
     }
-
-    
     &:hover {
         background: white;
     }
 }
 
-.feature-active {
-    background: white;
-    border-radius: 2px 2px 0 0 ;
-    padding: 30px;
-    text-align: center;
-    cursor: pointer;
-    
-    i {
-     
-  
-    }
-    
-    p {
-       
-       
-    }
-    
-}
-
-.feature-description {
-    background: white;
-    border-radius: 0 0 2px 2px;
-    text-align: center;
-}
-
-.primary-tools {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    justify-items: center;
-    grid-gap: 10px;
-    width: 100%;
-
-    @include respond(tablet) {
-        grid-template-columns: repeat(2, 1fr)
-    }
-    @include respond(phone) {
-        grid-template-columns: repeat(1, 1fr)
-    }
-    
-    &__el {
-        padding: 2rem;
-        font-size: 1rem;
-        font-family: inherit;
-        border-radius: 2px;
-        background: rgba(255, 255, 255, 0.6);
-        width: 100%;
-        text-align: center;
-        text-transform: uppercase;
-        font-weight: lighter;
-        transition: background .5s;
-
-        
-        &:hover {
-            background: rgba(255, 255, 255, 1);
-        }
-        
-        i {
-            font-size: 2.4rem;
-            padding: 1rem;
-            display: block;
-            text-align: center;
-        }
-    }
-}
-
-.secondary-tools {
-    width: 100%;
-
+.flex-item-large {
+    flex-basis: 25rem;
+    flex-grow: 1;
+    padding: 2rem;
+    font-size: 1rem;
+    font-family: inherit;
     border-radius: 2px;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
+    background: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: lighter;
+    transition: background .5s;
+    margin: .5rem;
     
-    @include respond(phone) {
-        grid-template-columns: repeat(2, 1fr)
+    &:hover {
+        background: rgba(255, 255, 255, 1);
     }
- 
-    
-    div {
-        background: rgba(255, 255, 255, 0.6);
-        text-transform: uppercase;
-        padding: .9rem;
+        
+    i {
+        font-size: 2.4rem;
+        padding: 1rem;
+        display: block;
         text-align: center;
-        border-radius: 2px;
-        font-weight: lighter;
-        letter-spacing: 2px;
-        transition: background .5s;
+    }
+}
+
+.flex-item-small {
+     flex-basis: 10rem;
+     flex-grow: 1;
+     background: rgba(255, 255, 255, 0.6);
+     text-transform: uppercase;
+     padding: .9rem;
+     margin: .5rem;
+     text-align: center;
+     border-radius: 2px;
+     font-weight: lighter;
+     letter-spacing: 2px;
+     transition: background .5s;
        
-        &:hover {
-            background: rgba(255, 255, 255, 1);
-        }
-        
-        
-        
-    }
+     &:hover {
+         background: rgba(255, 255, 255, 1);
+     }
 }
 
-.fade-interval-1 {
-    animation: header-fade;
-    animation-duration: .5s;
-    animation-iteration-count: 1;
-}
 
-.fade-interval-2 {
-    animation: header-fade;
-    animation-duration: .6s;
-    animation-iteration-count: 1;
-}
 
-.fade-interval-3 {
-    animation: header-fade;
-    animation-duration: .7s;
-    animation-iteration-count: 1;
-}
-
-.fade-interval-4 {
-    animation: header-fade;
-    animation-duration: .8s;
-    animation-iteration-count: 1;
-}
-
-.fade-interval-5 {
-    animation: header-fade;
-    animation-duration: .9s;
-    animation-iteration-count: 1;
-}
-
-.fade-interval-6 {
-    animation: header-fade;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-}
-
-.fade-interval-7 {
-    animation: header-fade;
-    animation-duration: 1.1s;
-    animation-iteration-count: 1;
-}
-
-.fade-interval-8 {
-    animation: header-fade;
-    animation-duration: 1.2s;
-    animation-iteration-count: 1;
-}
-
-.fade-interval-9 {
-    animation: header-fade;
-    animation-duration: 1.3s;
-    animation-iteration-count: 1;
-}
-
-.fade-interval-10 {
-    animation: header-fade;
-    animation-duration: 1.4s;
-    animation-iteration-count: 1;
-}
-
-.fade-interval-11 {
-    animation: header-fade;
-    animation-duration: 1.5s;
-    animation-iteration-count: 1;
-}
-
-@keyframes header-fade {
-    from {
-        transform: scale(.4);
-        opacity: 0;
-    }
-    
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
 
 .bg-1 {
     background: linear-gradient($color1, $color2);
@@ -257,6 +97,7 @@
 .bg-4 {
     background: linear-gradient(#6e5494, $color1);
 }
+
 .hide {
     opacity: 0;
 }

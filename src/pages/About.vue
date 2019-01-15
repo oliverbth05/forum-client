@@ -13,7 +13,7 @@
         <div class = 'full-section bg-2 p-a-2'>
             <div>
                 <h1 class = 'font-light color-white text-center'>Features</h1>
-                <div class = 'features'>
+                <div class = 'flex-container-responsive m-t-3'>
                     <div class = 'feature'>
                         <i class="fas fa-pen"></i>
                         <h4 class = 'font-light'>Content Creation</h4>
@@ -36,22 +36,22 @@
             <div class = 'section-1200 p-a-2'>
                 <h1 class = 'font-light color-white text-center'><i class="fas fa-tools"></i> Built With</h1>
         
-                <div class = 'primary-tools m-t-3'>
-                    <div :class = "{'primary-tools__el fade-interval-3' : showAnimation, 'primary-tools__el hide' : !showAnimation}"><i class="fab fa-node-js"></i><h4 class = 'font-light'>Node</h4></div>
-                    <div :class = "{'primary-tools__el fade-interval-3' : showAnimation, 'primary-tools__el hide' : !showAnimation}"><i class="fab fa-vuejs"></i><h4 class = 'font-light'>Vue</h4></div>
-                    <div :class = "{'primary-tools__el fade-interval-3' : showAnimation, 'primary-tools__el hide' : !showAnimation}"><i class="fas fa-database"></i><h4 class = 'font-light'>Mongodb</h4></div>
-                    <div :class = "{'primary-tools__el fade-interval-3' : showAnimation, 'primary-tools__el hide' : !showAnimation}"><i class="fab fa-sass"></i><h4 class = 'font-light'>Sass</h4></div>
+                <div class = 'flex-container-responsive m-t-3'>
+                    <div :class = "{'flex-item-large fade-interval-3' : showAnimation, 'flex-item-large hide' : !showAnimation}"><i class="fab fa-node-js"></i><h4 class = 'font-light'>Node</h4></div>
+                    <div :class = "{'flex-item-large fade-interval-3' : showAnimation, 'flex-item-large hide' : !showAnimation}"><i class="fab fa-vuejs"></i><h4 class = 'font-light'>Vue</h4></div>
+                    <div :class = "{'flex-item-large fade-interval-3' : showAnimation, 'flex-item-large hide' : !showAnimation}"><i class="fas fa-database"></i><h4 class = 'font-light'>Mongodb</h4></div>
+                    <div :class = "{'flex-item-large fade-interval-3' : showAnimation, 'flex-item-large hide' : !showAnimation}"><i class="fab fa-sass"></i><h4 class = 'font-light'>Sass</h4></div>
                 </div>
         
-                <div class = 'secondary-tools m-t-1'>
-                    <div :class = "{'fade-interval-4' : showAnimation, 'hide' : !showAnimation}" ><p>Webpack</p></div>
-                    <div :class = "{'fade-interval-5' : showAnimation, 'hide' : !showAnimation}" ><p>Vue Cli</p></div>
-                    <div :class = "{'fade-interval-6' : showAnimation, 'hide' : !showAnimation}" ><p>Vuex</p></div>
-                    <div :class = "{'fade-interval-7' : showAnimation, 'hide' : !showAnimation}" ><p>Vue-Router</p></div>
-                    <div :class = "{'fade-interval-8' : showAnimation, 'hide' : !showAnimation}" ><p>Vuetify</p></div>
-                    <div :class = "{'fade-interval-9' : showAnimation, 'hide' : !showAnimation}" ><p>Express</p></div>
-                    <div :class = "{'fade-interval-10' : showAnimation, 'hide' : !showAnimation}" ><p>Mongoose</p></div>
-                    <div :class = "{'fade-interval-11' : showAnimation, 'hide' : !showAnimation}" ><P>JsonWebTokens</p></div>
+                <div class = 'flex-container-responsive m-t-1'>
+                    <div :class = "{'flex-item-small fade-interval-4' : showAnimation, 'hide' : !showAnimation}" ><p>Webpack</p></div>
+                    <div :class = "{'flex-item-small fade-interval-5' : showAnimation, 'hide' : !showAnimation}" ><p>Vue Cli</p></div>
+                    <div :class = "{'flex-item-small fade-interval-6' : showAnimation, 'hide' : !showAnimation}" ><p>Vuex</p></div>
+                    <div :class = "{'flex-item-small fade-interval-7' : showAnimation, 'hide' : !showAnimation}" ><p>Vue-Router</p></div>
+                    <div :class = "{'flex-item-small fade-interval-8' : showAnimation, 'hide' : !showAnimation}" ><p>Vuetify</p></div>
+                    <div :class = "{'flex-item-small fade-interval-9' : showAnimation, 'hide' : !showAnimation}" ><p>Express</p></div>
+                    <div :class = "{'flex-item-small fade-interval-10' : showAnimation, 'hide' : !showAnimation}" ><p>Mongoose</p></div>
+                    <div :class = "{'flex-item-small fade-interval-11' : showAnimation, 'hide' : !showAnimation}" ><P>JsonWebTokens</p></div>
                 </div>
             </div>
         </div>

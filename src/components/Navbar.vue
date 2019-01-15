@@ -1,8 +1,6 @@
 <template>
     <nav>
-        <div :class = '{"nav nav-hide" : hide,  "nav nav-show" : !hide}'>
-            
-            
+        <div :class = '{"nav nav-hide" : hide,  "nav nav-show" : !hide}'> 
             <div class = 'nav__container p-a-2'>
                 
                 <router-link 
@@ -63,28 +61,22 @@
                     ><i class="fas fa-user-plus"></i>  Register</router-link>
                 
                 </div>
-        </div>
-                
             </div>
-            
-            
-            
-            
-    
-            <transition name = 'slide'>
-                <div class = 'nav__drawer' v-if = 'drawer'>
+                
+        </div>
+        
+            <div :class = '{"nav__drawer nav__drawer-hide" : !drawer,  "nav__drawer nav__drawer-show" : drawer}'>
                     
-                    <div class = 'nav__drawer-links'>
-                        <router-link
-                        @click = 'toggleDrawer'
-                        class = 'nav__drawer-link'
-                        active-class = 'mobile-active'
-                        to = '/home'
-                        >
-                            
-                            <p>Home</p>
-                            <i class="fas fa-home"></i>
-                        </router-link>
+                <div class = 'nav__drawer-links'>
+                    <router-link
+                    @click = 'toggleDrawer'
+                    class = 'nav__drawer-link'
+                    active-class = 'mobile-active'
+                    to = '/home'
+                    >
+                        <p>Home</p>
+                        <i class="fas fa-home"></i>
+                    </router-link>
             
                     <div v-if = 'user'>
                 
@@ -94,7 +86,6 @@
                         active-class = 'mobile-active'
                         :to = '/user/ + user._id'
                         >
-                            
                             <p>{{user.username}}</p>
                             <i class="fas fa-user"></i> 
                         </router-link>
@@ -105,19 +96,15 @@
                         active-class = 'mobile-active'
                         to              = '/new'
                         >
-                          
                             <p>New Post</p>
                             <i class="fas fa-pen"></i>
                         </router-link>
-                    
-                        
-                        
+
                         <a
                         @click = 'logOut'
                         class = 'nav__drawer-link'>
-                       
-                        <p>Log Out</p>
-                         <i class="fas fa-sign-out-alt"></i>
+                            <p>Log Out</p>
+                            <i class="fas fa-sign-out-alt"></i>
                         </a>
                     
                     </div>
@@ -128,9 +115,8 @@
                     active-class = 'mobile-active'
                     to = '/login'
                     >
-                     
                         <p>Log In</p>
-                           <i class="fas fa-sign-in-alt"></i>
+                        <i class="fas fa-sign-in-alt"></i>
                     </router-link>
                     
                     <router-link 
@@ -139,31 +125,27 @@
                     active-class = 'mobile-active'
                     to = '/register'
                     >
-                   
-                    <p>Register</p>
-                     <i class="fas fa-user-plus"></i>
+                        <p>Register</p>
+                        <i class="fas fa-user-plus"></i>
                     </router-link>
-                    </div>
                     
-                    <router-link 
-                        class           = 'nav__drawer-link'
-                        exact
-                        active-class = 'mobile-active'
-                        @click = 'toggleDrawer'
-                        to              = '/'>
-                            
-                            <p>About</p>
-                            <i class="fas fa-info-circle"></i>
-                        </router-link>
                 </div>
                     
-            </transition>
-            
-            <transition name = 'fade'>
-                <div @click = 'toggleDrawer' class = 'nav__backdrop' v-if = 'drawer'>
+                <router-link 
+                class           = 'nav__drawer-link'
+                exact
+                active-class = 'mobile-active'
+                @click = 'toggleDrawer'
+                to              = '/'>
+                    <p>About</p>
+                    <i class="fas fa-info-circle"></i>
+                </router-link>
+            </div>
+
+            <div @click = 'toggleDrawer' class = 'nav__backdrop' v-if = 'drawer'>
                 
-                </div>
-            </transition>
+            </div>
+         
             
             <i @click = 'toggleDrawer' v-if = '!hide' class = 'fas fa-bars mobile-btn'></i>
     </nav>
