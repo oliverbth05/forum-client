@@ -9,7 +9,6 @@
 <script>
   import Navbar   from './components/Navbar';
   import Banner from './components/Banner';
-
   import {mapMutations, mapGetters} from 'vuex';
   export default  {
     name: 'app',

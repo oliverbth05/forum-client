@@ -30,11 +30,9 @@
         text-transform: uppercase;
         cursor: pointer;
         color: white;
-
         i {
             font-size: 1.4rem;
         }
-
         &:hover {
             color: $color2
         }
@@ -45,11 +43,9 @@
         justify-content: space-between;
         align-items: center;
         height: 100%;
-        
         @include respond(tablet) {
             display: none;
         }
-
     }
      
     &__link {
@@ -88,11 +84,9 @@
     font-size: 25px;
     cursor: pointer;
     z-index: 11;
-    
     &:hover {
         color: $color2;
     }
-    
     @include respond(tablet) {
             display: block;
     }
@@ -108,20 +102,17 @@
     background: white;
     transition: all .3s;
     background: white;
-    border-right: 1.4px solid $grey-3;
     
     &-show {
         z-index: 10;
         transform: translateX(0);
         box-shadow: 3px 0px 14px 0px rgba(0,0,0,0.41);
-       
     }
     
     &-hide {
         z-index: -1;
         transform: translateX(-100%);
         box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.41);
-      
     }
     
     &-links {

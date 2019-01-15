@@ -7,25 +7,25 @@ const state = {
 }
 
 const getters = {
-    create_error(state) {
+    create_error (state) {
         return state.create_error
     },
-    create_loading(state) {
+    create_loading (state) {
         return state.create_loading
     }
 } 
 
 const mutations = {
-     createErrorDidOccur(state, error) {
+     createErrorDidOccur (state, error) {
          state.create_error = error
      },
-     createErrorReset(state) {
+     createErrorReset (state) {
          state.create_error = null
      },
-     init_create_loading(state) {
+     init_create_loading (state) {
          state.create_loading = true
      },
-     finish_create_loading(state) {
+     finish_create_loading (state) {
          state.create_loading = false
      }
      
@@ -65,5 +65,3 @@ export default {
     mutations,
     actions
 }
-
-//localhost:3000

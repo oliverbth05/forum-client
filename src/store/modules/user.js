@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {router} from '../../main';
 
 const state = {
     userProfile: null,
@@ -12,7 +11,6 @@ const state = {
 
 const getters = {
     
-    
     userProfile: (state) => {
         return state.userProfile
     },
@@ -23,8 +21,6 @@ const getters = {
 }
 
 const mutations = {
-
-
 
     loadUserProfile(state, data) {
         state.userProfile = data

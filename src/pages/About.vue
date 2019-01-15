@@ -82,14 +82,12 @@
 <script>
     import {Link} from 'vue-router'
     export default {
-        
         data() {
             return {
                 showAnimation: false,
                 activeFeature: 1
             }
         },
-        
         methods: {
           scroll(e){
              if (window.pageYOffset > 1600) {
@@ -104,5 +102,4 @@
             window.addEventListener('scroll', this.scroll)
         }
     }
-    
 </script>

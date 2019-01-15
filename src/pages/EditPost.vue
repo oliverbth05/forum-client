@@ -33,7 +33,6 @@
 <script> 
     import { mapGetters, mapActions } from 'vuex';
     import Loader from '../components/Loader';
-
     export default {
         components: {
             'loader': Loader
@@ -44,18 +43,15 @@
                 hasLoaded: false
             }
         },
-        
         computed: {
             ...mapGetters(['edit_loading', 'user', 'edit_post', 'token']),
         },
-        
         methods: {
            ...mapActions(['updateEditPost', 'deletePost']),
             cancelEdit() {
                 this.$router.go(-1);
             },
         },
-        
         updated() {
             if (!this.edit_title && !this.edit_body && !this.edit_image && !this.hasLoaded) { //Populates the forms with fetched data
                 this.post_data = this.edit_post;

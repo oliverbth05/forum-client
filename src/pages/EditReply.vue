@@ -52,11 +52,6 @@
                 if(this.body) {
                     this.updateEditReply({comment_id: this.edit_reply._id, reply_id: this.edit_reply.replies[0]._id, body: this.body, token: this.token})
                 }
-                
-                else {
-                    alert('Cannot submit empty reply, you can delete it altogether if you wish.')
-                }
-                
             }
         },
         
